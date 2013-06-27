@@ -1,0 +1,182 @@
+/* -*- coding: utf-8 -*- */
+@charset "utf-8";
+
+#search-area {
+    background-color: #EEE;
+    padding: 2px 5px;
+    margin: 5px;
+    width: 850px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+#indicator-wrapper {
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+}
+
+#indicator {
+    display: none;
+    width: 16px;
+    height: 11px;
+    background: url(../indicator.gif) no-repeat left top;
+}
+
+.projects {
+    -moz-transition-property: height;
+    -moz-transition-duration: 0.5s;
+    -moz-transition-timing-function: linear;
+    -webkit-transition : 0.5s ease-in-out;
+}
+
+.project {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    width: 850px;
+}
+
+.project:nth-child(even) {
+    background-color: #EEEEEE;
+}
+
+.project-info {
+    padding: 3px 10px;
+    width: 320px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.info-title, .info-description {
+    display: block;
+    width: 320px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.info-title {
+    overflow: hidden;
+    font-weight: bold;
+}
+.info-env_name {
+    font-weight: normal;
+}
+
+.info-description {
+    font-size: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project:hover {
+    background-color: #FFDDDD;
+}
+
+.project a:hover {
+    background-color: #FFDDDD;
+}
+
+.project-activity {
+    width: 300px;
+    display: inline-block;
+}
+
+.activity {
+    margin: 0;
+    padding: 3px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 480px;
+}
+
+.activity-table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse
+}
+
+.activity table th {
+    padding: 2px 5px 0 2px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 80%;
+    padding-left: 5px;
+}
+
+.activity table td {
+    padding: 2px 5px;
+    font-size: 80%;
+    text-align: right;
+}
+
+.activity table td span {
+    display: inline-block;
+}
+
+.activity table td:nth-child(1),
+.activity table th:nth-child(1) {
+    border-right: 1px solid #999999;
+}
+
+.activity table td:nth-child(3),
+.activity table th:nth-child(3) {
+    border-left: 1px dotted #999999;
+    border-right: 1px dotted #999999;
+}
+
+.activity table tr:nth-child(2) th,
+.activity table tr:nth-child(2) td {
+    border-bottom: 1px dotted #999999;
+}
+
+.activity table tr:nth-child(1) th {
+    font-weight: bold;
+    border-bottom: 1px solid #999999;
+}
+
+.activity-data {
+    width: 80px;
+}
+
+.chart-graph {
+    float: left;
+}
+
+.chart-graph-white {
+    float: right;
+    height: 0.75em;
+    background: white;
+}
+
+.chart-month {
+    margin: 0px;
+    height: 0.75em;
+    background-color: #FCC;
+    background-image: linear-gradient(left, rgb(255, 224, 224), rgb(255, 0, 0));
+    background-image: -moz-linear-gradient(left, rgb(255, 224, 224), rgb(255, 0, 0));
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgb(255, 224, 224)), color-stop(1, rgb(255, 0, 0)));
+}
+
+.chart-total {
+    margin: 0px;
+    height: 0.75em;
+    background-color: #CCF;
+    background-image: linear-gradient(left, rgb(224, 224, 255), rgb(0, 0, 255));
+    background-image: -moz-linear-gradient(left, rgb(224, 224, 255), rgb(0, 0, 255));
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgb(224, 224, 255)), color-stop(1, rgb(0, 0, 255)));
+}
+
+.tracportal-beneath {
+    clear: both;
+    padding-top: 20px;
+}
+
+.info {
+    color: #666;
+    font-size: 90%;
+}

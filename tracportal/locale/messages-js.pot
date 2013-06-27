@@ -1,0 +1,160 @@
+# Translations template for TracPortal.
+# Copyright (C) 2013 Internet Initiative Japan Inc.
+# This file is distributed under the same license as the TracPortal project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TracPortal 0.1.1\n"
+"Report-Msgid-Bugs-To: idp-support@iij.ad.jp\n"
+"POT-Creation-Date: 2013-06-04 14:36+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: tracportal/htdocs/js/cross_search.js:83
+msgid "Author"
+msgstr ""
+
+#: tracportal/htdocs/js/cross_search.js:91
+msgid "More Search Results ..."
+msgstr ""
+
+#: tracportal/htdocs/js/cross_search.js:94
+msgid "No matches found."
+msgstr ""
+
+#: tracportal/htdocs/js/cross_search.js:153
+#, python-format
+msgid "%s results"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:15
+msgid "Ticket"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:16
+msgid "Type"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:17
+msgid "Created"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:18
+msgid "Updated"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:19
+msgid "Component"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:20
+msgid "Severity"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:21
+msgid "Priority"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:22
+msgid "Owner"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:23
+msgid "Reporter"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:24
+msgid "Cc"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:25
+msgid "Version"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:26
+msgid "Milestone"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:27
+msgid "Status"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:28
+msgid "Resolution"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:29
+msgid "Summary"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:30
+msgid "Description"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:31
+msgid "Keywords"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:485
+msgid "Milestone: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:489
+msgid "Due: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:498
+msgid "Total Tickets: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:499
+msgid "Active: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:500
+msgid "New: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:501
+msgid "Closed: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:535
+msgid "Detail"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:582
+msgid "Creator: "
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:582
+msgid "anonymous"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:601
+msgid "Ticket Detail"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:603
+msgid "Close"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:683
+msgid "No ticket"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:715
+msgid "No roadmap"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:747
+msgid "No recent changes"
+msgstr ""
+

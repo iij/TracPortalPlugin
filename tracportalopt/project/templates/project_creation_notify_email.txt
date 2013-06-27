@@ -1,0 +1,23 @@
+Dear ${owner.name},
+
+We have been create your Trac project.
+
+Please check the registration details.
+
+[Project Information]
+ID: ${project.id}
+Name: ${project.name}
+Description: ${project.descr}
+
+[Owner]
+ID: ${owner.id}
+Name: ${owner.name}
+EMail: ${owner.email}
+
+You can access your Trac project from this URL.
+URL: ${project.url}
+
+Thank you!
+
+--
+${support.name} <${support.email}>

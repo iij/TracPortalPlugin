@@ -1,0 +1,99 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:i18n="http://genshi.edgewall.org/i18n"
+      i18n:domain="tracportal">
+  <xi:include href="layout.html" />
+  <xi:include href="macros.html" />
+<head>
+    <title>New Project</title>
+</head>
+<body>
+
+<div id="notice" class="system-message" py:if="notices">
+    <ul py:for="notice in notices">
+        <li>${wiki_to_html(context, notice, escape_newlines=False)}</li>
+    </ul>
+</div>
+
+<div id="content">
+    <h1>New Project</h1>
+
+    <div class="usage">
+        <span>Please input all fields and click the "Create Project" button.</span>
+    </div>
+
+    <form id="properties" method="POST" action="">
+        <fieldset>
+            <legend>Project Information</legend>
+            <table>
+                <tr>
+                    <th><label for="project-id">Project ID</label></th>
+                    <td>
+                        <div class="form-field">
+                            <input type="text" id="project-id" name="project_id" value="${ctx.project.id}"/><br/>
+                            <span class="example">(e.x. foo)</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="project-name">Project Name</label></th>
+                    <td>
+                        <div class="form-field">
+                            <input type="text" id="project-name" name="project_name" value="${ctx.project.name}"/><br/>
+                            <span class="example">(e.x. Project Foo)</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="project-descr">Description</label></th>
+                    <td>
+                        <div class="form-field">
+                            <textarea id="project-descr" name="project_descr" cols="30" rows="5">${ctx.project.descr}</textarea>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Project Owner</legend>
+            <table>
+                <tr>
+                    <th><label for="owner-id">User ID</label></th>
+                    <td>
+                        <div class="form-field">
+                            <input type="text" id="owner-id" name="owner_id" value="${ctx.owner.id}"/><br/>
+                            <span class="example">(e.x. taro)</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="owner-name">Fullname</label></th>
+                    <td>
+                        <div class="form-field">
+                            <input type="text" id="owner-name" name="owner_name" value="${ctx.owner.name}"/><br/>
+                            <span class="example">(e.x. Taro Yamada)</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="owner-email">Email</label></th>
+                    <td id="user_mail">
+                        <div class="form-field">
+                            <input type="text" id="owner-email" name="owner_email" value="${ctx.owner.email}"/><br/>
+                            <span class="example">(e.x. taro@example.com)</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <div class="buttons">
+            <input type="submit" value="${_('Create Project')}"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

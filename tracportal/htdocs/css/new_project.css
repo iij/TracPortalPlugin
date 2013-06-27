@@ -1,0 +1,66 @@
+/* -*- coding: utf-8 -*- */
+@charset "utf-8";
+
+#main {
+    margin: 0 auto;
+}
+
+#content {
+    margin: 0 auto;
+    width: 800px;
+}
+
+#notice ul {
+    padding: 0;
+    margin: 0;
+}
+
+#notice.system-message ul li {
+    list-style-type: none;
+}
+
+#content h1 {
+    text-align: center;
+}
+
+.usage {
+    text-align: center;
+}
+
+#properties {
+    margin: 1em;
+}
+
+#properties th {
+    vertical-align: top;
+    text-align: right;
+    width: 150px;
+    padding: 1em .5em 0 0;
+}
+
+.form-field .example {
+    color: #999;
+    font-size: 90%;
+    text-align: left;
+}
+
+.form-field textarea {
+    font-size: 120%;
+    width: 30em;
+}
+
+.form-field input[type="text"] {
+    font-size: 120%;
+    width: 30em;
+    height: 1.5em;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons input[type="submit"] {
+    width: 200px;
+    height: 1.5em;
+    font-size: 1.2em;
+}

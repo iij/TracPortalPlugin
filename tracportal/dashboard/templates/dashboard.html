@@ -1,0 +1,59 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:i18n="http://genshi.edgewall.org/i18n"
+      i18n:domain="tracportal">
+<xi:include href="macros.html"/>
+<xi:include href="layout.html"/>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<div id="content">
+    <h1>Dashboard</h1>
+
+    <div id="dashboard">
+        <div class="content left">
+            <div class="section roadmap">
+                <h2>Recent Milestone</h2>
+
+                <p class="notice">Show the recent milestones in projects which belong you.</p>
+
+                <div class="icons">
+                    <div class="icon update"></div>
+                    <div class="icon settings"></div>
+                </div>
+                <div id="roadmaps" class="article"></div>
+            </div>
+            <div class="section timeline">
+                <h2>Recent Updated</h2>
+
+                <p class="notice">Show the timeline past of 3 days in projects which belong you.</p>
+
+                <div class="icons">
+                    <div class="icon update"></div>
+                    <div class="icon settings"></div>
+                </div>
+                <div id="timelines" class="article"></div>
+            </div>
+        </div>
+        <div class="content right">
+            <div class="section report">
+                <h2>Active Tickets</h2>
+
+                <p class="notice">Show the active tickets which you involved(owner, reporter).</p>
+
+                <div class="icons">
+                    <div class="icon update"></div>
+                    <div class="icon settings"></div>
+                </div>
+                <div id="reports" class="article"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

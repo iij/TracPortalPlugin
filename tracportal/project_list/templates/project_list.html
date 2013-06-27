@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:i18n="http://genshi.edgewall.org/i18n"
+      i18n:domain="tracportal">
+  <xi:include href="layout.html" />
+  <xi:include href="macros.html" />
+  <head>
+    <title>${title}</title>
+  </head>
+
+  <body>
+    <div id="content" class="report">
+
+      <h1>${title}</h1>
+      <p>This is a summary of the projects running in this Trac instance.</p>
+      <div id="search-area">
+        <label for="search-form">filter:</label>
+        <input type="search" id="search-form" placeholder="keyword" />
+        <div id="indicator-wrapper"><div id="indicator"></div></div>
+        <span class="info">(AND to Search, separated by a space)</span>
+      </div>
+
+      <div class="projects" py:with="scheme = req.abs_href().startswith('https:') and 'https:' or 'http:'">
+        <div class="project" py:for="project in projects">
+          <py:choose>
+            <py:when test="project.info.href or True">
+              <div class="project-info">
+                <a class="info-title ext-link" py:with="url = project.info.url"
+                   href="${scheme + (url.startswith('https') and url.lstrip('https:') or url.lstrip('http:')) + link_suffix}"
+                   title="${project.info.description}">
+                  <span class="icon">&#8203;</span>
+                  <span>${project.info.name}</span>
+                  <span class="info-env_name">(${project.info.env_name})</span>
+                </a>
+                <div class="info-description">${project.info.description}</div>
+              </div>
+              <div class="project-activity">
+                <div class="activity">
+                  <table class="activity-table">
+                    <tr>
+                      <th></th>
+                      <th class="activity-data">commits</th>
+                      <th class="activity-data">tickets</th>
+                      <th class="chart-title">Activity Graph</th>
+                    </tr><tr class="activity-month">
+                      <th>month</th>
+                      <td class="activity-data">${project.activity.changes_month}</td>
+                      <td class="activity-data">${project.activity.tickets_month}
+                        <span class="ticket-closed">(${project.activity.tickets_closed_month})</span>
+                      </td>
+                      <td title="${_('Activity Month Graph')}: ${project.activity.score_month}/100">
+                        <div class="chart-graph chart-month" style="width: 250px">
+                          <div class="chart-graph-white"
+                               style="width:${250 - (project.activity.score_month * 2.5)}px"><!-- dummy for IE -->
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr class="activity-total">
+                      <th>total</th>
+                      <td class="activity-data">${project.activity.changes}</td>
+                      <td class="activity-data">${project.activity.tickets}
+                        <span class="ticket-closed">(${project.activity.tickets_closed})</span>
+                      </td>
+                      <td title="${_('Activity Total Graph')}: ${project.activity.score}/100">
+                        <div class="chart-graph chart-total" style="width: 250px">
+                          <div class="chart-graph-white"
+                               style="width:${250 - (project.activity.score * 2.5)}px"><!-- dummy for IE -->
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </py:when>
+            <py:otherwise>
+              <a name="dummy" class="info-title">$project.info.name:<em>Error</em></a>
+              <span class="project-list-error">$project.info.description</span>
+            </py:otherwise>
+          </py:choose>
+        </div>
+      </div>
+
+      <div id="help">
+        <p><span>The charts underneath each project represent relative activity levels.</span><br />
+          <span>The top half represents monthly activity and the bottom half is total activity.</span></p>
+      </div>
+
+    </div>
+  </body>
+</html>

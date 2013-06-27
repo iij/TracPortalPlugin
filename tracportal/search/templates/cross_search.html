@@ -1,0 +1,82 @@
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:i18n="http://genshi.edgewall.org/i18n"
+      i18n:domain="tracportal">
+  <xi:include href="macros.html" />
+  <xi:include href="layout.html" />
+  <head>
+    <title>Cross Search</title>
+  </head>
+  <body>
+    <div id="content" class="search">
+      <h1>Cross Search</h1>
+      <p>You can search selected projects.</p>
+      <form id="cross_search" name="cross_search">
+        <div>
+          <input type="text" id="q" name="q" size="40" value="$q" />
+          <input type="submit" value="${_('Search')}" />
+          <div id="indicator"><!-- dummy --></div>
+        </div>
+        <fieldset id="search_options">
+          <legend>Search Options</legend>
+          <div class="search_option">
+            <span>Search Filters:</span>
+            <div id="filters" class="checkable_option">
+              <input type="checkbox" id="ticket" class="filter" name="ticket"
+                     checked="${filters.ticket == 'on' and 'checked' or None}" />
+              <label for="ticket">Tickets</label><br/>
+              <input type="checkbox" id="changeset" class="filter" name="changeset"
+                     checked="${filters.changeset == 'on' and 'checked' or None}" />
+              <label for="changeset">Changesets</label><br/>
+              <input type="checkbox" id="milestone" class="filter" name="milestone"
+                     checked="${filters.milestone == 'on' and 'checked' or None}" />
+              <label for="milestone">Milestone</label><br/>
+              <input type="checkbox" id="wiki" class="filter" name="wiki"
+                     checked="${filters.wiki == 'on' and 'checked' or None}" />
+              <label for="wiki">Wiki</label><br/>
+              <input type="checkbox" id="ignore_trac_default" name="remove_trac"
+                     checked="${ignore_trac_default == 'on' and 'checked' or None}" />
+              <label for="ignore_trac_default">Ignore Default Wiki Pages</label>
+            </div>
+          </div>
+          <div class="search_option">
+            <span>Search Target(Projects):</span><br />
+            <div id="projects" class="checkable_option">
+              <label>
+                <input type="checkbox" id="all_projects" value="1"
+                       checked="${len([p.env_name for p in projects if p.do_search]) == 0 and 'checked' or None}" />
+                All Projects
+              </label><br />
+              <py:for each="p in projects">
+                <label>
+                  <input type="checkbox" class="project" value="${p.url}"
+                         data-name="${p.name}" data-env_name="${p.env_name}"
+                         checked="${p.do_search and 'checked' or None}" />
+                  ${p.name} (${p.env_name})
+                </label><br />
+              </py:for>
+            </div>
+          </div>
+          <div class="search_option">
+            <label>Maximum Results(For each projects):<br/>
+              <input type="text" name="num" id="num" value="${num or 10}" />
+            </label>
+            <br/>
+            <label>Hide no search result items:
+              <input type="checkbox" name="slim_results" id="slim_results" checked="checked"/>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+      <hr/>
+      <div id="search_title">
+        <h2>Search Results:<span id="search_status"></span></h2>
+      </div>
+      <div id="search_results"></div>
+    </div>
+  </body>
+</html>
