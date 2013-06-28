@@ -22,10 +22,36 @@ Installation
      tracportal.* = enabled
      tracportalopt.* = enabled # (optional)
 
-3. Need upgrade the Trac environment::
+3. Need upgrade the Trac environment after installing the plugin::
 
-     trac-admin /trac/env upgrade
+     $ trac-admin /trac/env upgrade
 
+
+Dependencies
+============
+
+ - Trac__ >= 0.12
+ - `Trac XML-RPC Plugin`_ >= r13194
+
+.. _Trac: http://trac.edgewall.org/wiki/TracInstall
+.. _`Trac XML-RPC Plugin`: http://trac-hacks.org/wiki/XmlRpcPlugin
+
+
+Configuration
+=============
+
+Example::
+
+  [tracportal]
+  ignore_projects = portal
+  inherit_file = /var/www/trac/trac.ini
+  notify_email_cc = xxx@example.com
+  notify_email_from = yyy@example.com
+  notify_email_from_name = TracPortal
+  parent_base_url = http://xxx.yyy.zzz/trac/
+  trac_env_parent_dir = /var/www/trac/envs
+
+For more information, please see the wiki:TracIni.
 
 Screenshot
 ==========
