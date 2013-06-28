@@ -30,7 +30,7 @@ Installation
 Dependencies
 ============
 
- - Trac__ >= 0.12
+ - Trac_ >= 0.12
  - `Trac XML-RPC Plugin`_ >= r13194
 
 .. _Trac: http://trac.edgewall.org/wiki/TracInstall
