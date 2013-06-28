@@ -2,11 +2,11 @@
 #
 # The user interface module for cross-search available projects.
 #
-# (C) 2011 Internet Initiative Japan Inc.
+# (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.
 #
 # Created on 2011/05/10
-# @author: yosinobu
+# @author: yosinobu@iij.ad.jp
 
 from  pkg_resources import resource_filename
 

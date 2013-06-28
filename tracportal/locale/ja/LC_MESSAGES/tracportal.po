@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TracPortal 0.0.2\n"
 "Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-27 21:26+0900\n"
+"POT-Creation-Date: 2013-06-28 11:39+0900\n"
 "PO-Revision-Date: 2011-06-29 15:34+0900\n"
 "Last-Translator: Yoshinobu Fujimoto <yosinobu@iij.ad.jp>\n"
 "Language-Team: IDP-SUPPORT <idp-support@iij.ad.jp>\n"
@@ -96,6 +96,10 @@ msgstr ""
 "よろしくお願いします。\n"
 "\n"
 
+#: tracportal/api.py:47
+msgid "List of Trac environment's name that is ignore projects in the TracPortal."
+msgstr "ポータルで無視するTrac環境の名称(ディレクトリ名)をリストで指定します。"
+
 #: tracportal/core.py:22
 msgid ""
 "Prent path of trac env directories.If not set this option, use "
@@ -106,7 +110,7 @@ msgstr "Tracのプロジェクトを配置しているディレクトリのパ�
 msgid "Parent URL of base_url."
 msgstr "base_urlの上位階層のURLを指定します"
 
-#: tracportal/dashboard/web_ui.py:41
+#: tracportal/dashboard/web_ui.py:39
 #: tracportal/dashboard/templates/dashboard.html:12
 #: tracportal/dashboard/templates/dashboard.html:16
 msgid "Dashboard"
@@ -244,8 +248,8 @@ msgstr "例: taro@example.com"
 msgid "Create Project"
 msgstr "プロジェクト作成"
 
-#: tracportal/project_list/api.py:45 tracportal/project_list/web_ui.py:40
-#: tracportal/project_list/web_ui.py:145
+#: tracportal/project_list/api.py:45 tracportal/project_list/web_ui.py:38
+#: tracportal/project_list/web_ui.py:139
 msgid "Number of days to evaluate the project activity."
 msgstr "アクティビティを評価する日数です。"
 
@@ -274,21 +278,17 @@ msgstr "プロジェクト情報のキャッシュの生存期間(sec)を指定�
 msgid "Project Information %(name)s does not exist."
 msgstr "%(name)s のプロジェクト情報が見付かりません。"
 
-#: tracportal/project_list/web_ui.py:38 tracportal/project_list/web_ui.py:143
-msgid "Ignore projects in project list."
-msgstr "カンマ(,)区切りでプロジェクトIDを列挙すると、該当するプロジェクトはプロジェクト一覧の表示対象から外れます。"
-
-#: tracportal/project_list/web_ui.py:42 tracportal/project_list/web_ui.py:147
+#: tracportal/project_list/web_ui.py:40 tracportal/project_list/web_ui.py:141
 msgid ""
 "Path to be appended to the project url in project list page. (e.x, if "
 "need login, set \"/login\" value in this option.)"
 msgstr "プロジェクト一覧のリンクURLに付加するパス文字列を指定します。(例えば、ログインする必要がある場合は \"/login\" を指定します。)"
 
-#: tracportal/project_list/web_ui.py:53 tracportal/project_list/web_ui.py:127
+#: tracportal/project_list/web_ui.py:51 tracportal/project_list/web_ui.py:123
 msgid "Available Projects"
 msgstr "所属プロジェクト一覧"
 
-#: tracportal/project_list/web_ui.py:158 tracportal/project_list/web_ui.py:232
+#: tracportal/project_list/web_ui.py:152 tracportal/project_list/web_ui.py:224
 msgid "Public Projects"
 msgstr "公開プロジェクト一覧"
 
@@ -407,4 +407,3 @@ msgstr "検索結果の無いプロジェクトを非表示:"
 #: tracportal/search/templates/cross_search.html:77
 msgid "Search Results:"
 msgstr "検索結果:"
-

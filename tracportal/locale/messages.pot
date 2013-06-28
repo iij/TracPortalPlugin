@@ -1,15 +1,15 @@
-# Translations template for TracPortal.
+# Translations template for TracPortalPlugin.
 # Copyright (C) 2013 Internet Initiative Japan Inc.
-# This file is distributed under the same license as the TracPortal
-# project.
+# This file is distributed under the same license as the
+# TracPortalPlugin project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: TracPortal 0.1.1\n"
+"Project-Id-Version: TracPortalPlugin 0.1.0\n"
 "Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-27 21:26+0900\n"
+"POT-Creation-Date: 2013-06-28 11:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,6 +88,12 @@ msgid ""
 "--"
 msgstr ""
 
+#: tracportal/api.py:47
+msgid ""
+"List of Trac environment's name that is ignore projects in the "
+"TracPortal."
+msgstr ""
+
 #: tracportal/core.py:22
 msgid ""
 "Prent path of trac env directories.If not set this option, use "
@@ -98,7 +104,7 @@ msgstr ""
 msgid "Parent URL of base_url."
 msgstr ""
 
-#: tracportal/dashboard/web_ui.py:41
+#: tracportal/dashboard/web_ui.py:39
 #: tracportal/dashboard/templates/dashboard.html:12
 #: tracportal/dashboard/templates/dashboard.html:16
 msgid "Dashboard"
@@ -234,8 +240,8 @@ msgstr ""
 msgid "Create Project"
 msgstr ""
 
-#: tracportal/project_list/api.py:45 tracportal/project_list/web_ui.py:40
-#: tracportal/project_list/web_ui.py:145
+#: tracportal/project_list/api.py:45 tracportal/project_list/web_ui.py:38
+#: tracportal/project_list/web_ui.py:139
 msgid "Number of days to evaluate the project activity."
 msgstr ""
 
@@ -266,25 +272,20 @@ msgstr ""
 msgid "Project Information %(name)s does not exist."
 msgstr ""
 
-#: tracportal/project_list/web_ui.py:38
-#: tracportal/project_list/web_ui.py:143
-msgid "Ignore projects in project list."
-msgstr ""
-
-#: tracportal/project_list/web_ui.py:42
-#: tracportal/project_list/web_ui.py:147
+#: tracportal/project_list/web_ui.py:40
+#: tracportal/project_list/web_ui.py:141
 msgid ""
 "Path to be appended to the project url in project list page. (e.x, if"
 " need login, set \"/login\" value in this option.)"
 msgstr ""
 
-#: tracportal/project_list/web_ui.py:53
-#: tracportal/project_list/web_ui.py:127
+#: tracportal/project_list/web_ui.py:51
+#: tracportal/project_list/web_ui.py:123
 msgid "Available Projects"
 msgstr ""
 
-#: tracportal/project_list/web_ui.py:158
-#: tracportal/project_list/web_ui.py:232
+#: tracportal/project_list/web_ui.py:152
+#: tracportal/project_list/web_ui.py:224
 msgid "Public Projects"
 msgstr ""
 

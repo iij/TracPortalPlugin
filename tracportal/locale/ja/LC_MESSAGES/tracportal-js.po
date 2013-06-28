@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TracPortal 0.0.2\n"
 "Report-Msgid-Bugs-To: idp-support@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-04 14:36+0900\n"
+"POT-Creation-Date: 2013-06-28 11:37+0900\n"
 "PO-Revision-Date: 2011-06-29 15:34+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -102,59 +102,54 @@ msgstr "詳細"
 msgid "Keywords"
 msgstr "キーワード"
 
-#: tracportal/htdocs/js/dashboard.js:485
-msgid "Milestone: "
-msgstr "マイルストーン："
-
-#: tracportal/htdocs/js/dashboard.js:489
+#: tracportal/htdocs/js/dashboard.js:491
 msgid "Due: "
 msgstr "期日："
 
-#: tracportal/htdocs/js/dashboard.js:498
+#: tracportal/htdocs/js/dashboard.js:500
 msgid "Total Tickets: "
 msgstr "チケットの件数："
 
-#: tracportal/htdocs/js/dashboard.js:499
+#: tracportal/htdocs/js/dashboard.js:501
 msgid "Active: "
 msgstr "アクティブ："
 
-#: tracportal/htdocs/js/dashboard.js:500
+#: tracportal/htdocs/js/dashboard.js:502
 msgid "New: "
 msgstr "新規："
 
-#: tracportal/htdocs/js/dashboard.js:501
+#: tracportal/htdocs/js/dashboard.js:503
 msgid "Closed: "
 msgstr "クローズ："
 
-#: tracportal/htdocs/js/dashboard.js:535
+#: tracportal/htdocs/js/dashboard.js:537
 msgid "Detail"
 msgstr "詳細"
 
-#: tracportal/htdocs/js/dashboard.js:582
+#: tracportal/htdocs/js/dashboard.js:584
 msgid "Creator: "
 msgstr "更新者："
 
-#: tracportal/htdocs/js/dashboard.js:582
+#: tracportal/htdocs/js/dashboard.js:584
 msgid "anonymous"
 msgstr "匿名"
 
-#: tracportal/htdocs/js/dashboard.js:601
+#: tracportal/htdocs/js/dashboard.js:603
 msgid "Ticket Detail"
 msgstr "チケット詳細情報"
 
-#: tracportal/htdocs/js/dashboard.js:603
+#: tracportal/htdocs/js/dashboard.js:605
 msgid "Close"
 msgstr "クローズ"
 
-#: tracportal/htdocs/js/dashboard.js:683
+#: tracportal/htdocs/js/dashboard.js:685
 msgid "No ticket"
 msgstr "チケットはありません。"
 
-#: tracportal/htdocs/js/dashboard.js:715
+#: tracportal/htdocs/js/dashboard.js:718
 msgid "No roadmap"
 msgstr "マイルストーンはありません。"
 
-#: tracportal/htdocs/js/dashboard.js:747
+#: tracportal/htdocs/js/dashboard.js:750
 msgid "No recent changes"
 msgstr "最近の変更はありません。"
-

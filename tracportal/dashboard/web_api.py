@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# The user interface module for timeline of available projects.
+# Web API module of Dashboard.
 #
 # (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.

@@ -63,6 +63,6 @@ setup(
         tracportalopt.project.notification = tracportalopt.project.notification
         tracportalopt.project.ticket_notify = tracportalopt.project.ticket_notify
     """,
-    requires = ['trac', 'xmlrpcplugin'],
+    requires = ['Trac', 'TracXMLRPC'],
     **extra
 )

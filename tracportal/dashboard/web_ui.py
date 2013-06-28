@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# The user interface module for timeline of available projects.
+# User interface module of Dashboard.
 #
 # (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.
 #
 # Created on 2013/05/20
-# @author: yosinobu
-
-__author__ = 'yosinobu'
+# @author: yosinobu@iij.ad.jp
 
 from  pkg_resources import resource_filename
 

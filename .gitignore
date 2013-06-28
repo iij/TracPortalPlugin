@@ -24,3 +24,4 @@ trac/htdocs/js/messages/*.js
 .pydevproject
 *.iml
 .DS_Store
+.idea

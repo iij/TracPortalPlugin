@@ -1,14 +1,15 @@
-# Translations template for TracPortal.
+# Translations template for TracPortalPlugin.
 # Copyright (C) 2013 Internet Initiative Japan Inc.
-# This file is distributed under the same license as the TracPortal project.
+# This file is distributed under the same license as the TracPortalPlugin
+# project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: TracPortal 0.1.1\n"
+"Project-Id-Version: TracPortalPlugin 0.1.0\n"
 "Report-Msgid-Bugs-To: idp-support@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-04 14:36+0900\n"
+"POT-Creation-Date: 2013-06-28 11:37+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,59 +103,55 @@ msgstr ""
 msgid "Keywords"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:485
-msgid "Milestone: "
-msgstr ""
-
-#: tracportal/htdocs/js/dashboard.js:489
+#: tracportal/htdocs/js/dashboard.js:491
 msgid "Due: "
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:498
+#: tracportal/htdocs/js/dashboard.js:500
 msgid "Total Tickets: "
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:499
+#: tracportal/htdocs/js/dashboard.js:501
 msgid "Active: "
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:500
+#: tracportal/htdocs/js/dashboard.js:502
 msgid "New: "
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:501
+#: tracportal/htdocs/js/dashboard.js:503
 msgid "Closed: "
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:535
+#: tracportal/htdocs/js/dashboard.js:537
 msgid "Detail"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:582
+#: tracportal/htdocs/js/dashboard.js:584
 msgid "Creator: "
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:582
+#: tracportal/htdocs/js/dashboard.js:584
 msgid "anonymous"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:601
+#: tracportal/htdocs/js/dashboard.js:603
 msgid "Ticket Detail"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:603
+#: tracportal/htdocs/js/dashboard.js:605
 msgid "Close"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:683
+#: tracportal/htdocs/js/dashboard.js:685
 msgid "No ticket"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:715
+#: tracportal/htdocs/js/dashboard.js:718
 msgid "No roadmap"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:747
+#: tracportal/htdocs/js/dashboard.js:750
 msgid "No recent changes"
 msgstr ""
 

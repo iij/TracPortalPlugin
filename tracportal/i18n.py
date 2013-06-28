@@ -2,9 +2,9 @@
 #
 # Load i18n for TracPortalPlugin.
 #
-# (c) 2010 Internet Initiative Japan Inc.
+# (c) 2013 Internet Initiative Japan Inc.
 # Created on 2011/02/01
-# @author: yosinobu
+# @author: yosinobu@iij.ad.jp
 
 from pkg_resources import resource_filename
 

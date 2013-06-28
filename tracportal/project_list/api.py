@@ -2,11 +2,11 @@
 #
 # Trac Project List API for Trac Portal Plugin.
 #
-# (C) 2011 Internet Initiative Japan Inc.
+# (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.
 #
-# Created on 2011/01/27
-# @author: yosinobu
+# Created on 2013/06/27
+# @author: yosinobu@iij.ad.jp
 
 import os
 import time
@@ -32,7 +32,7 @@ class IProjectActivityDataProvider(Interface):
 
     @staticmethod
     def get_activity_data(env_name, beginning, end):
-        """Return a activity data of the project."""
+        """Return activity data of the project."""
 
 
 class DefaultActivityDataProvider(Component):
@@ -46,12 +46,7 @@ class DefaultActivityDataProvider(Component):
 
     # IProjectActivityDataProvider methods
     def get_activity_data(self, env_name, beginning, end):
-        """プロジェクトのアクティビティを返す．
-
-        データは，まずDBのキャッシュを取得し，期限が切れていれば，
-        Trac の APIモジュールで取得する．
-        (ローカルにあるプロジェクトのみ取得可能．)
-        """
+        """Return activity data of the local project."""
         activity = None
         try:
             activity = ProjectActivity(self.env, env_name)

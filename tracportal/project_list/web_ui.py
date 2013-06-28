@@ -2,11 +2,11 @@
 #
 # User Interface Module for Trac Portal Plugin.
 #
-# (C) 2011 Internet Initiative Japan Inc.
+# (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.
 #
 # Created on 2011/01/27
-# @author: yosinobu
+# @author: yosinobu@iij.ad.jp
 
 from  pkg_resources import resource_filename
 from datetime import timedelta
@@ -14,7 +14,7 @@ from datetime import timedelta
 from genshi.builder import tag
 
 from trac.core import *
-from trac.config import Option, IntOption, ListOption
+from trac.config import Option, IntOption
 from trac.perm import IPermissionRequestor
 from trac.web.api import IRequestHandler
 from trac.web.chrome import ITemplateProvider, INavigationContributor, \
@@ -34,8 +34,6 @@ class ProjectListModule(Component):
     project_activity_providers = ExtensionPoint(IProjectActivityDataProvider)
     project_info_providers = ExtensionPoint(IProjectInfoProvider)
 
-    ignore_projects = ListOption('tracportal', 'ignore_projects',
-                                 doc=_('Ignore projects in project list.'))
     period = IntOption('tracportal', 'project_activity_assessment_period', 30,
                        doc=_('Number of days to evaluate the project activity.'))
     link_suffix = Option('tracportal', 'project_list_link_url_suffix', '',
@@ -82,8 +80,6 @@ class ProjectListModule(Component):
             if env_names:
                 break
         for env_name in env_names:
-            if env_name in self.ignore_projects:
-                continue
             project = {
                 'env_name': env_name,
                 'info': None,
@@ -139,8 +135,6 @@ class PublicProjectListModule(Component):
     project_activity_providers = ExtensionPoint(IProjectActivityDataProvider)
     project_info_providers = ExtensionPoint(IProjectInfoProvider)
 
-    ignore_projects = ListOption('tracportal', 'ignore_projects',
-                                 doc=_('Ignore projects in project list.'))
     period = IntOption('tracportal', 'project_activity_assessment_period', 30,
                        doc=_('Number of days to evaluate the project activity.'))
     link_suffix = Option('tracportal', 'project_list_link_url_suffix', '',
@@ -187,8 +181,6 @@ class PublicProjectListModule(Component):
             if env_names:
                 break
         for env_name in env_names:
-            if env_name in self.ignore_projects:
-                continue
             project = {
                 'env_name': env_name,
                 'info': None,

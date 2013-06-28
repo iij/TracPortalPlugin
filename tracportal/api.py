@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# (C) 2011 Internet Initiative Japan Inc.
+# (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.
 #
 # Created on 2011/01/27
@@ -11,16 +11,12 @@ import os
 import dircache
 
 from trac.core import *
-from trac.config import Option, ListOption
+from trac.config import ListOption
 from trac.env import open_environment
 from trac.perm import PermissionSystem
+
 from tracportal.core import get_trac_env_parent_dir
-
-try:
-    import ldap
-except ImportError, e:
-    ldap = None
-
+from tracportal.i18n import _
 
 class IProjectListProvider(Interface):
     """Extension point interface for adding sources for project project_list."""
@@ -47,7 +43,8 @@ class BasicProjectListProvider(Component):
     implements(IProjectListProvider)
 
     # Trac options
-    ignore_projects = ListOption('tracportal', 'ignore_projects')
+    ignore_projects = ListOption('tracportal', 'ignore_projects',
+                                 doc=_("List of Trac environment's name that is ignore projects in the TracPortal."))
 
     # class variables
     envkey = 'TRAC_ENV_PARENT_DIR'

@@ -2,7 +2,7 @@
 #
 # Utility methods
 #
-# (C) 2011 Internet Initiative Japan Inc.
+# (C) 2013 Internet Initiative Japan Inc.
 # All rights reserved.
 #
 # Created on 2011/06/20
