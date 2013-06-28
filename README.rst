@@ -9,19 +9,15 @@ Features
 ========
 
 - Project Index
-
     View a list of Trac projects which include the activity information.
 
 - Dashboard
-
     View own tickets, timeline and milestone in the available projects.
 
 - Cross Search
-
     Perform a search over the available projects.
 
 - Project Creation
-
     Create a new Trac project.
 
 
@@ -54,66 +50,79 @@ Installation
 
 5. Set the plugin's configurations
 
-     see Configuration_
+   see Configuration_
 
 6. Grant the permission using the trac-admin tool or the General / Permissions panel in the Admin tab of web interface.
 
-     +---------------------------------+----------------------------------------+
-     | Action                          | Description                            |
-     +=================================+========================================+
-     | PORTAL_PROJECT_LIST_VIEW        | View the project list page.            |
-     +---------------------------------+----------------------------------------+
-     | PORTAL_PUBLIC_PROJECT_LIST_VIEW | View the public project list page.     |
-     +---------------------------------+----------------------------------------+
-     | PORTAL_DASHBOARD_VIEW           | View the dashboard page.               |
-     +---------------------------------+----------------------------------------+
-     | PORTAL_CROSS_SEARCH_VIEW        | View and execute cross search queries. |
-     +---------------------------------+----------------------------------------+
-     | PORTAL_PROJECT_CREATE           | View and create a new Trac project.    |
-     +---------------------------------+----------------------------------------+
+   see `Trac Permissions`_
 
 
 Dependencies
 ============
 
- - Trac_ >= 0.12
- - `Trac XML-RPC Plugin`_ >= r13194
+- Trac_ >= 0.12
+- `Trac XML-RPC Plugin`_ >= r13194
 
 .. _Trac: http://trac.edgewall.org/wiki/TracInstall
 .. _`Trac XML-RPC Plugin`: http://trac-hacks.org/wiki/XmlRpcPlugin
 
 
+Trac Permissions
+================
+
+This is a list of permissions used this plugin.
+
++---------------------------------+----------------------------------------+
+| Action                          | Description                            |
++=================================+========================================+
+| PORTAL_PROJECT_LIST_VIEW        | View the project list page.            |
++---------------------------------+----------------------------------------+
+| PORTAL_PUBLIC_PROJECT_LIST_VIEW | View the public project list page.     |
++---------------------------------+----------------------------------------+
+| PORTAL_DASHBOARD_VIEW           | View the dashboard page.               |
++---------------------------------+----------------------------------------+
+| PORTAL_CROSS_SEARCH_VIEW        | View and execute cross search queries. |
++---------------------------------+----------------------------------------+
+| PORTAL_PROJECT_CREATE           | View and create a new Trac project.    |
++---------------------------------+----------------------------------------+
+
+
 Configuration
 =============
 
-**[tracportal]**
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  |ignore_projects                     | A list of Trac environment's name that is ignore projects in the portal pages.                    |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | inherit_file                       | Inherit config file. When create a project, set the [inherit] file option in the project config.  |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | notify_email_cc                    | Email address(es) to always send notifications to, addresses can be seen by all recipients (Cc:). |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | notify_email_from                  | Sender address to use in notification emails.                                                     |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | notify_email_from_name             | Sender name to use in notification emails.                                                        |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | notify_ticket_env                  | Trac environment for notify project creation by new ticket.                                       |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | parent_base_url                    | Parent URL of base_ur                                                                             |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | project_activity_assessment_period | Number of days to evaluate the project activity.                                                  |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | project_activity_cache_ttl         | Time to live of cache(sec) for project activity.                                                  |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | project_info_cache_ttl             | Time to live of cache(sec) for project information.                                               |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | project_list_link_url_suffix       | Path to be appended to the project url in project list page.                                      |
-  |                                    | (e.x, if need login, set "/login" value in this option.)                                          |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
-  | trac_env_parent_dir                | Prent path of trac env directories.                                                               |
-  |                                    | If not set this option, use TRAC_ENV_PARENT_DIR in python environment variables.                  |
-  +------------------------------------+---------------------------------------------------------------------------------------------------+
+This is a list of available configuration options in this plugin.
+
+Section: **[tracportal]**
+
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| Name                               | Description                                                                                       |
++====================================+===================================================================================================+
+| ignore_projects                    | A list of Trac environment's name that is ignore projects in the portal pages.                    |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| inherit_file                       | Inherit config file. When create a project, set the [inherit] file option in the project config.  |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| notify_email_cc                    | Email address(es) to always send notifications to, addresses can be seen by all recipients (Cc:). |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| notify_email_from                  | Sender address to use in notification emails.                                                     |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| notify_email_from_name             | Sender name to use in notification emails.                                                        |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| notify_ticket_env                  | Trac environment for notify project creation by new ticket.                                       |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| parent_base_url                    | Parent URL of base_ur                                                                             |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| project_activity_assessment_period | Number of days to evaluate the project activity.                                                  |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| project_activity_cache_ttl         | Time to live of cache(sec) for project activity.                                                  |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| project_info_cache_ttl             | Time to live of cache(sec) for project information.                                               |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| project_list_link_url_suffix       | Path to be appended to the project url in project list page.                                      |
+|                                    | (e.x, if need login, set "/login" value in this option.)                                          |
++------------------------------------+---------------------------------------------------------------------------------------------------+
+| trac_env_parent_dir                | Prent path of trac env directories.                                                               |
+|                                    | If not set this option, use TRAC_ENV_PARENT_DIR in python environment variables.                  |
++------------------------------------+---------------------------------------------------------------------------------------------------+
 
 Example::
 
