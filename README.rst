@@ -8,17 +8,21 @@ TracPortalPlugin is providing portal features for multiple Trac projects (Trac >
 Features
 ========
 
-1. Project Index
-     View a list of Trac projects which include the activity information.
+- Project Index
 
-2. Dashboard
-     View own tickets, timeline and milestone in the available projects.
+    View a list of Trac projects which include the activity information.
 
-3. Cross Search
-     Perform a search over the available projects.
+- Dashboard
 
-4. Project Creation
-     Create a new Trac project.
+    View own tickets, timeline and milestone in the available projects.
+
+- Cross Search
+
+    Perform a search over the available projects.
+
+- Project Creation
+
+    Create a new Trac project.
 
 
 Installation
@@ -49,22 +53,24 @@ Installation
      $ trac-admin /trac/env upgrade
 
 5. Set the plugin's configurations
+
      see Configuration_
 
 6. Grant the permission using the trac-admin tool or the General / Permissions panel in the Admin tab of web interface.
-     +---------------------------------+---------------------------------------+
-     | Action                          | Description                           |
-     +=================================+=======================================+
-     | PORTAL_PROJECT_LIST_VIEW        | View the project list page.           |
-     +---------------------------------+---------------------------------------+
-     | PORTAL_PUBLIC_PROJECT_LIST_VIEW | View the public project list page.    |
-     +---------------------------------+---------------------------------------+
-     | PORTAL_DASHBOARD_VIEW           | View the dashboard page.              |
-     +---------------------------------+---------------------------------------+
-     | PORTAL_CROSS_SEARCH_VIEW        | View and execute cross search queries.|
-     +---------------------------------+---------------------------------------+
-     | PORTAL_PROJECT_CREATE           | View and create a new Trac project.   |
-     +---------------------------------+---------------------------------------+
+
+     +---------------------------------+----------------------------------------+
+     | Action                          | Description                            |
+     +=================================+========================================+
+     | PORTAL_PROJECT_LIST_VIEW        | View the project list page.            |
+     +---------------------------------+----------------------------------------+
+     | PORTAL_PUBLIC_PROJECT_LIST_VIEW | View the public project list page.     |
+     +---------------------------------+----------------------------------------+
+     | PORTAL_DASHBOARD_VIEW           | View the dashboard page.               |
+     +---------------------------------+----------------------------------------+
+     | PORTAL_CROSS_SEARCH_VIEW        | View and execute cross search queries. |
+     +---------------------------------+----------------------------------------+
+     | PORTAL_PROJECT_CREATE           | View and create a new Trac project.    |
+     +---------------------------------+----------------------------------------+
 
 
 Dependencies
@@ -82,7 +88,7 @@ Configuration
 
 **[tracportal]**
   +------------------------------------+---------------------------------------------------------------------------------------------------+
-  |ignore_projects                     | List of Trac environment's name that is ignore projects in the portal pages.                      |
+  |ignore_projects                     | A list of Trac environment's name that is ignore projects in the portal pages.                    |
   +------------------------------------+---------------------------------------------------------------------------------------------------+
   | inherit_file                       | Inherit config file. When create a project, set the [inherit] file option in the project config.  |
   +------------------------------------+---------------------------------------------------------------------------------------------------+
