@@ -22,7 +22,6 @@ class TicketNotificationSystem(Component):
     implements(IProjectCreationInterceptor)
     #options
     notify_env = Option('tracportal', 'notify_ticket_env',
-                        default='/var/service/data/trac/projects/all',
                         doc='Trac environment for notify creation project by new ticket.')
 
     # IProjectCreationInterceptor methods
@@ -31,6 +30,8 @@ class TicketNotificationSystem(Component):
         pass
 
     def post_process(self, project_info, owner_info, _env):
+        if not self.notify_env:
+            return
         env = open_environment(self.notify_env)
         ticket = Ticket(env)
         values = {

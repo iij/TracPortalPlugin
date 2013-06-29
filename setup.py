@@ -61,7 +61,6 @@ setup(
         tracportal.project.web_ui = tracportal.project.web_ui
         tracportal.i18n = tracportal.i18n
         tracportalopt.project.notification = tracportalopt.project.notification
-        tracportalopt.project.ticket_notify = tracportalopt.project.ticket_notify
     """,
     requires = ['Trac', 'TracXMLRPC'],
     **extra
