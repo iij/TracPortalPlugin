@@ -7,7 +7,7 @@ TracPortalPluginは、同一インスタンス上にある複数のTracプロジ
 
 .. note::
    このプラグインは Trac 0.11 まで使用することができた TraM_ というツールの代替として作成しました。
-   TraM は Trac をラッピングして動作するのに対し、TracPortalPlugin はその名前の通り Trac のプラグインとして動作します。
+   TraM は Trac を包含して動作するのに対し、TracPortalPlugin はその名前の通り Trac のプラグインとして動作します。
    そのため、Trac のバージョンアップによる影響を受けにくく、機能拡張も可能な作りとなっています。
 
 .. _TraM: http://sourceforge.jp/projects/shibuya-trac/wiki/plugins%2FTraM
@@ -186,6 +186,7 @@ Tracの設定について、更に詳しい情報は wiki:TracIni をご覧く�
 ------------------------
 
 ナビゲーションバーのリンクの並びを変えたい場合は trac.ini の [trac] セクションの mainnav で並びを設定することができます。
+
 例::
 
   [trac]
@@ -203,6 +204,7 @@ Tracの設定について、更に詳しい情報は wiki:TracIni をご覧く�
 ポータル以外のプロジェクトにポータルのリンクを追加したい場合
 ------------------------------------------------------------
 NavAddPlugin_ というプラグインで簡単にナビゲーションバーにリンクを追加することができます。
+
 例::
 
   [components]

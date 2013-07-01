@@ -36,7 +36,7 @@ setup(
     author = 'yosinobu',
     author_email = 'yosinobu@iij.ad.jp',
     description = 'Provide trac portal pages for multiple projects.',
-    url='http://www.iij.ad.jp',
+    url='https://github.com/iij/TracPortalPlugin',
     license = 'MIT',
     packages = find_packages(exclude=['*.tests']),
     package_data = {
