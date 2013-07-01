@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TracPortalPlugin 0.1.0\n"
 "Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-28 11:39+0900\n"
+"POT-Creation-Date: 2013-07-01 13:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,10 +34,6 @@ msgstr ""
 
 #: tracportalopt/project/notification.py:66
 msgid "Ready to start Trac project!"
-msgstr ""
-
-#: tracportalopt/project/ticket_notify.py:42
-msgid "TracPortal created a new project."
 msgstr ""
 
 #: tracportalopt/project/templates/project_creation_notify_email.txt:1

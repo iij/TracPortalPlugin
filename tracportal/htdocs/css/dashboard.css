@@ -151,6 +151,40 @@
 }
 
 
+.checkbox-edge {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #999999; /* for IE 8 */
+    border-color: rgba(155, 155, 155, .57);
+    font-size: 1px;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px 0 1px;
+}
+
+.checkbox-in {
+    background-image: url(../css/smoothness/images/ui-icons_222222_256x240.png);
+    background-position: 16px 16px;
+    height: 16px;
+    width: 16px;
+    outline: 0;
+    position: relative;
+    top: -3px;
+    left: -2px;
+}
+
+.checkbox-in.mixed {
+    background-position: -64px -128px;
+}
+
+.checkbox-in.checked {
+    background-position: -64px -144px;
+}
+
 /* Milestone */
 .milestone-meta {
     font-size: 85%;
@@ -339,11 +373,11 @@
 }
 
 /* Settings */
-.section ul.settings {
+.settings-field {
     position: absolute;
     padding: .5em;
     right: 3px;
-    top: 18px;
+    top: 28px;
     text-decoration: none;
     background: #fff;
     opacity: .90;
@@ -351,8 +385,10 @@
     box-shadow: 1px 1px 2px #ccc;
     -webkit-box-shadow: 1px 1px 2px #ccc;
     z-index: 9999;
+    max-height: 400px;
+    overflow: auto;
 }
 
-.section ul.settings li {
-    list-style: none;
+.settings-field th {
+    text-align: left;
 }

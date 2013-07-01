@@ -1,9 +1,8 @@
 /**
- * Created with IntelliJ IDEA.
- * User: yosinobu@iij.ad.jp
- * Date: 2013/05/20
- * Time: 18:51
- * To change this template use File | Settings | File Templates.
+ * (c) Internet Initiative Japan Inc.
+ *
+ * Author: yosinobu@iij.ad.jp
+ * Created: 2013/05/20 18:51
  */
 
 (function (global, $) {
@@ -474,6 +473,7 @@
             $milestones = $('<div class="milestones"/>');
         callback = callback || function () {};
         if (milestones.length < 1) {
+            callback();
             return;
         }
         // project name
@@ -527,14 +527,15 @@
         $the_report.append($('<h3 class="project-name"/>').text(project.name));
 
         // table header
+        $header.append($(format('<th class="detail"/>')));
         $.each(REPORTING_FIELDS, function (i, name) {
             var $th = $(format('<th class="%s">%s</th>', name, DEFAULT_TICKET_FIELDS[name].label));
             $header.append($th);
         });
-        $header.append($(format('<th class="detail"/>')));
         $.each(tickets, function (i, ticket) {
             var $tr = $('<tr class="ticket"/>'),
                 $detail = $(format('<td class="detail"><a href="javascript:void(0);">%s</a></td>', _('Detail')));
+            $tr.append($detail).data('ticket', ticket);
             $.each(REPORTING_FIELDS, function (i, name) {
                 var value;
                 if (name === 'id') {
@@ -544,7 +545,6 @@
                 }
                 $tr.append($(format('<td class="%s"><span>%s</span></td>', name, value)));
             });
-            $tr.append($detail).data('ticket', ticket);
             $body.append($tr);
             $detail.click(function () {
                 var ticket = $(this).parents('tr').data('ticket');
@@ -777,22 +777,30 @@
 
     Dashboard.prototype.showSettings = function (context) {
         var self = this,
-            $e = $(format('.section.%s ul.settings', context));
+            $e = $(format('.section.%s .settings-field', context));
         if ($e.length > 0) {
             $e.toggle('fast');
             return;
         }
         getProjects(context, function (projects) {
-            var $e = $('<ul class="settings"/>').hide(),
-                $section = $('.section').filter('.' + context);
+            var $e = $('<div class="settings-field"><table><thead/><tbody/></table></div>').hide(),
+                $section = $('.section').filter('.' + context),
+                $checkbox = $('<div class="checkbox-edge"/>').append($('<div class="checkbox-in"/>'));
+            $e.find('thead').append($('<tr/>').append(
+                $('<th/>').append($checkbox),
+                $('<th/>').append(_('ID')),
+                $('<th/>').append(_('Name'))));
             $.each(projects, function (i, p) {
-                var $checkbox = $('<input type="checkbox"/>').attr('value', p.id);
+                var $tr = $('<tr/>'),
+                    $c = $('<input type="checkbox"/>').attr('value', p.id);
                 if ($.inArray(p.id, self.getIgnoreProjects(context)) === -1) {
-                    $checkbox.attr('checked', 'checked');
+                    $c.attr('checked', 'checked');
                 }
-                $e.append($('<li class="project"/>').append(
-                    $('<label/>').append($checkbox,
-                        $('<span/>').append(p.name))));
+                $tr.append(
+                    $('<td/>').append($c),
+                    $('<td/>').append(p.id),
+                    $('<td/>').append(p.name));
+                $e.find('tbody').append($tr);
             });
             $section.append($e.show('fast'));
             $e.find('input:checkbox').change(function () {
@@ -805,6 +813,27 @@
                     self.addIgnoreProject(context, pid);
                 }
                 self.saveSettings();
+                $checkbox.trigger('sync');
+            });
+            // checkbox 'update' event handler
+            $checkbox.bind('sync', function () {
+                var count = $e.find('input:checkbox:checked').length,
+                    $c = $checkbox.find('.checkbox-in');
+                $c.removeClass('checked mixed');
+                if (count === projects.length) {
+                    $c.addClass('checked');
+                } else if (count > 0) {
+                    $c.addClass('mixed');
+                }
+            }).trigger('sync');
+            $checkbox.click(function () {
+                var $checkboxes = $e.find('input:checkbox');
+                if ($(this).find('.checkbox-in').is('.checked, .mixed')) {
+                    $checkboxes.removeAttr('checked');
+                } else {
+                    $checkboxes.attr('checked', 'checked');
+                }
+                $checkboxes.change();
             });
         });
     };
@@ -905,6 +934,7 @@
                 dashboard.showTimelines();
             }
         });
+        // event handlers for settings
         $('.settings').click(function () {
             var $p = $(this).parents('.section');
             if ($p.hasClass('report')) {
@@ -915,6 +945,12 @@
                 dashboard.showSettings('timeline');
             }
         });
+        $(window).click(function (e) {
+            if (!$(e.target).is('.settings') && !$(e.target).parents('.settings-field:visible').length) {
+                $('.settings-field:visible').hide('fast');
+            }
+        });
+        // for window resize
         $(window).resize(onResize).resize();
     });
 

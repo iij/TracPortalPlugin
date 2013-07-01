@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TracPortal 0.0.2\n"
 "Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-28 11:39+0900\n"
+"POT-Creation-Date: 2013-07-01 13:42+0900\n"
 "PO-Revision-Date: 2011-06-29 15:34+0900\n"
 "Last-Translator: Yoshinobu Fujimoto <yosinobu@iij.ad.jp>\n"
 "Language-Team: IDP-SUPPORT <idp-support@iij.ad.jp>\n"
@@ -32,10 +32,6 @@ msgstr "常に通知メールを送るメールアドレスを設定します。
 #: tracportalopt/project/notification.py:66
 msgid "Ready to start Trac project!"
 msgstr "Tracプロジェクト新規登録完了のご連絡"
-
-#: tracportalopt/project/ticket_notify.py:42
-msgid "TracPortal created a new project."
-msgstr "新規プロジェクトを作成しました。"
 
 #: tracportalopt/project/templates/project_creation_notify_email.txt:1
 msgid "Dear"
@@ -407,3 +403,4 @@ msgstr "検索結果の無いプロジェクトを非表示:"
 #: tracportal/search/templates/cross_search.html:77
 msgid "Search Results:"
 msgstr "検索結果:"
+

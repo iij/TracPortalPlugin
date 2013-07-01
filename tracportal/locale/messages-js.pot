@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TracPortalPlugin 0.1.0\n"
-"Report-Msgid-Bugs-To: idp-support@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-28 11:37+0900\n"
+"Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
+"POT-Creation-Date: 2013-07-01 13:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,71 +35,71 @@ msgstr ""
 msgid "%s results"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:15
+#: tracportal/htdocs/js/dashboard.js:14
 msgid "Ticket"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:16
+#: tracportal/htdocs/js/dashboard.js:15
 msgid "Type"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:17
+#: tracportal/htdocs/js/dashboard.js:16
 msgid "Created"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:18
+#: tracportal/htdocs/js/dashboard.js:17
 msgid "Updated"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:19
+#: tracportal/htdocs/js/dashboard.js:18
 msgid "Component"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:20
+#: tracportal/htdocs/js/dashboard.js:19
 msgid "Severity"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:21
+#: tracportal/htdocs/js/dashboard.js:20
 msgid "Priority"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:22
+#: tracportal/htdocs/js/dashboard.js:21
 msgid "Owner"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:23
+#: tracportal/htdocs/js/dashboard.js:22
 msgid "Reporter"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:24
+#: tracportal/htdocs/js/dashboard.js:23
 msgid "Cc"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:25
+#: tracportal/htdocs/js/dashboard.js:24
 msgid "Version"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:26
+#: tracportal/htdocs/js/dashboard.js:25
 msgid "Milestone"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:27
+#: tracportal/htdocs/js/dashboard.js:26
 msgid "Status"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:28
+#: tracportal/htdocs/js/dashboard.js:27
 msgid "Resolution"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:29
+#: tracportal/htdocs/js/dashboard.js:28
 msgid "Summary"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:30
+#: tracportal/htdocs/js/dashboard.js:29
 msgid "Description"
 msgstr ""
 
-#: tracportal/htdocs/js/dashboard.js:31
+#: tracportal/htdocs/js/dashboard.js:30
 msgid "Keywords"
 msgstr ""
 
@@ -153,5 +153,13 @@ msgstr ""
 
 #: tracportal/htdocs/js/dashboard.js:750
 msgid "No recent changes"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:791
+msgid "ID"
+msgstr ""
+
+#: tracportal/htdocs/js/dashboard.js:792
+msgid "Name"
 msgstr ""
 

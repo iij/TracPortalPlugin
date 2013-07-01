@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TracPortal 0.0.2\n"
 "Report-Msgid-Bugs-To: idp-support@iij.ad.jp\n"
-"POT-Creation-Date: 2013-06-28 11:37+0900\n"
+"POT-Creation-Date: 2013-07-01 13:42+0900\n"
 "PO-Revision-Date: 2011-06-29 15:34+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -34,71 +34,71 @@ msgstr "一致するものが見つかりませんでした．"
 msgid "%s results"
 msgstr "%s 件"
 
-#: tracportal/htdocs/js/dashboard.js:15
+#: tracportal/htdocs/js/dashboard.js:14
 msgid "Ticket"
 msgstr "チケット"
 
-#: tracportal/htdocs/js/dashboard.js:16
+#: tracportal/htdocs/js/dashboard.js:15
 msgid "Type"
 msgstr "分類"
 
-#: tracportal/htdocs/js/dashboard.js:17
+#: tracportal/htdocs/js/dashboard.js:16
 msgid "Created"
 msgstr "作成日時"
 
-#: tracportal/htdocs/js/dashboard.js:18
+#: tracportal/htdocs/js/dashboard.js:17
 msgid "Updated"
 msgstr "更新日時"
 
-#: tracportal/htdocs/js/dashboard.js:19
+#: tracportal/htdocs/js/dashboard.js:18
 msgid "Component"
 msgstr "コンポーネント"
 
-#: tracportal/htdocs/js/dashboard.js:20
+#: tracportal/htdocs/js/dashboard.js:19
 msgid "Severity"
 msgstr "重要度"
 
-#: tracportal/htdocs/js/dashboard.js:21
+#: tracportal/htdocs/js/dashboard.js:20
 msgid "Priority"
 msgstr "優先度"
 
-#: tracportal/htdocs/js/dashboard.js:22
+#: tracportal/htdocs/js/dashboard.js:21
 msgid "Owner"
 msgstr "担当者"
 
-#: tracportal/htdocs/js/dashboard.js:23
+#: tracportal/htdocs/js/dashboard.js:22
 msgid "Reporter"
 msgstr "報告者"
 
-#: tracportal/htdocs/js/dashboard.js:24
+#: tracportal/htdocs/js/dashboard.js:23
 msgid "Cc"
 msgstr "関係者"
 
-#: tracportal/htdocs/js/dashboard.js:25
+#: tracportal/htdocs/js/dashboard.js:24
 msgid "Version"
 msgstr "バージョン"
 
-#: tracportal/htdocs/js/dashboard.js:26
+#: tracportal/htdocs/js/dashboard.js:25
 msgid "Milestone"
 msgstr "マイルストーン"
 
-#: tracportal/htdocs/js/dashboard.js:27
+#: tracportal/htdocs/js/dashboard.js:26
 msgid "Status"
 msgstr "ステータス"
 
-#: tracportal/htdocs/js/dashboard.js:28
+#: tracportal/htdocs/js/dashboard.js:27
 msgid "Resolution"
 msgstr "解決方法"
 
-#: tracportal/htdocs/js/dashboard.js:29
+#: tracportal/htdocs/js/dashboard.js:28
 msgid "Summary"
 msgstr "概要"
 
-#: tracportal/htdocs/js/dashboard.js:30
+#: tracportal/htdocs/js/dashboard.js:29
 msgid "Description"
 msgstr "詳細"
 
-#: tracportal/htdocs/js/dashboard.js:31
+#: tracportal/htdocs/js/dashboard.js:30
 msgid "Keywords"
 msgstr "キーワード"
 
@@ -153,3 +153,12 @@ msgstr "マイルストーンはありません。"
 #: tracportal/htdocs/js/dashboard.js:750
 msgid "No recent changes"
 msgstr "最近の変更はありません。"
+
+#: tracportal/htdocs/js/dashboard.js:791
+msgid "ID"
+msgstr "ID"
+
+#: tracportal/htdocs/js/dashboard.js:792
+msgid "Name"
+msgstr "名称"
+
