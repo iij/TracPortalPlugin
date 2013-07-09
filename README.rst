@@ -3,62 +3,69 @@
 Trac Portal Plugin
 ==================
 
-TracPortalPlugin is providing portal features for multiple Trac projects (Trac >= 0.12).
+TracPortalPluginは、同一インスタンス上にある複数のTracプロジェクトのポータル機能を提供するプラグインです。
 
-Features
-========
+.. note::
+   このプラグインは Trac 0.11 まで使用することができた TraM_ というツールの代替として作成しました。
+   TraM は Trac を包含して動作するのに対し、TracPortalPlugin はその名前の通り Trac のプラグインとして動作します。
+   そのため、Trac のバージョンアップによる影響を受けにくく、機能拡張も可能な作りとなっています。
 
-- Project Index
-    View a list of Trac projects which include the activity information.
+.. _TraM: http://sourceforge.jp/projects/shibuya-trac/wiki/plugins%2FTraM
 
-- Dashboard
-    View own tickets, timeline and milestone in the available projects.
+機能
+====
 
-- Cross Search
-    Perform a search over the available projects.
+- プロジェクト一覧
+    全てのプロジェクトのアクティビティを含む情報を一覧で表示します。
 
-- Project Creation
-    Create a new Trac project.
+- ダッシュボード
+    所属するプロジェクト全体の直近のタイムラインとマイルストーンおよび自分に関係するチケット情報を表示します。
+
+- プロジェクト横断検索
+    所属するプロジェクトに対して横断的に検索を行います。
+
+- プロジェクト新規作成
+    Webインターフェースから新しくTracプロジェクトを作成します。
 
 
-Installation
+インストール
 ============
 
-1. Clone the git repository or download the zipped source::
+1. まず、以下のいずれかの方法でプラグインのソースを取得します::
 
      $ git clone https://github.com/iij/TracPortalPlugin.git
      or
      $ wget https://github.com/iij/TracPortalPlugin/archive/master.zip
      $ unzip master.zip
 
-2. Please install in the same manner as any other Trac plugins::
+2. 環境に合わせた方法でインストールします::
 
      $ python setup.py bdist_egg
      $ cp dist/*.egg /trac/env/plugins/
      or
      $ python setup.py install
 
-3. You will also need to enable the plugin in your (portal) environment trac.ini::
+3. ポータルとなるプロジェクトに対して、Tracの設定ファイル(trac.ini)に以下のように記述し、プラグインを有効にします::
 
      [components]
      tracportal.* = enabled
      tracportalopt.* = enabled # (optional)
 
-4. Need upgrade the Trac environment after installing the plugin::
+4. プラグインをインストール後は、trac-adminコマンドでプロジェクトの環境をアップグレードします::
 
      $ trac-admin /trac/env upgrade
 
-5. Set the plugin's configurations
+5. 環境に応じてプラグインの設定を行います。
 
-   see Configuration_
+   `設定情報`_ をご覧ください。
 
-6. Grant the permission using the trac-admin tool or the General / Permissions panel in the Admin tab of web interface.
+6. trac-adminコマンドもしくはWeb上の管理コンソールから必要に応じてポータル機能の権限を設定します。
 
-   see `Trac Permissions`_
+   `権限情報`_ をご覧ください。
 
 
-Dependencies
-============
+依存ライブラリ/プラグイン
+=========================
 
 - Trac_ >= 0.12
 - `Trac XML-RPC Plugin`_ >= r13194
@@ -67,62 +74,65 @@ Dependencies
 .. _`Trac XML-RPC Plugin`: http://trac-hacks.org/wiki/XmlRpcPlugin
 
 
-Trac Permissions
-================
+権限情報
+========
 
-This is a list of permissions used this plugin.
+以下は、TracPortalPluginで使用される権限の一覧です。必要に応じて権限を付加してください。
 
-+---------------------------------+----------------------------------------+
-| Action                          | Description                            |
-+=================================+========================================+
-| PORTAL_PROJECT_LIST_VIEW        | View the project list page.            |
-+---------------------------------+----------------------------------------+
-| PORTAL_PUBLIC_PROJECT_LIST_VIEW | View the public project list page.     |
-+---------------------------------+----------------------------------------+
-| PORTAL_DASHBOARD_VIEW           | View the dashboard page.               |
-+---------------------------------+----------------------------------------+
-| PORTAL_CROSS_SEARCH_VIEW        | View and execute cross search queries. |
-+---------------------------------+----------------------------------------+
-| PORTAL_PROJECT_CREATE           | View and create a new Trac project.    |
-+---------------------------------+----------------------------------------+
++---------------------------------+-----------------------------------------------+
+| 権限                            | 概要                                          |
++=================================+===============================================+
+| PORTAL_PROJECT_LIST_VIEW        | 所属プロジェクト一覧を表示する権限です。      |
++---------------------------------+-----------------------------------------------+
+| PORTAL_PUBLIC_PROJECT_LIST_VIEW | 公開プロジェクト一覧を表示する権限です。      |
++---------------------------------+-----------------------------------------------+
+| PORTAL_DASHBOARD_VIEW           | ダッシュボードを表示する権限です。            |
++---------------------------------+-----------------------------------------------+
+| PORTAL_CROSS_SEARCH_VIEW        | プロジェクト横断検索を表示/実行する権限です。 |
++---------------------------------+-----------------------------------------------+
+| PORTAL_PROJECT_CREATE           | プロジェクト新規作成および実行する権限です。  |
++---------------------------------+-----------------------------------------------+
 
 
-Configuration
-=============
+設定情報
+========
 
-This is a list of available configuration options in this plugin.
+以下は、TracPortalPluginの設定一覧です。環境に合わせて設定してください。
 
 Section: **[tracportal]**
 
 +------------------------------------+---------------------------------------------------------------------------------------------------+
 | Name                               | Description                                                                                       |
 +====================================+===================================================================================================+
-| ignore_projects                    | A list of Trac environment's name that is ignore projects in the portal pages.                    |
+| ignore_projects                    | ポータルで無視するTrac環境の名称(ディレクトリ名)をリストで指定します。                            |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| inherit_file                       | Inherit config file. When create a project, set the [inherit] file option in the project config.  |
+| inherit_file                       | 継承する設定ファイル(trac.ini)のパスを指定します。                                                |
+|                                    | この設定値は、プロジェクト作成時の --inheritオプションの指定に使用されます。                      |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| notify_email_cc                    | Email address(es) to always send notifications to, addresses can be seen by all recipients (Cc:). |
+| notify_email_cc                    | プロジェクト作成時の通知メールを送るアドレスを指定します。(Cc)                                    |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| notify_email_from                  | Sender address to use in notification emails.                                                     |
+| notify_email_from                  | プロジェクト作成時の通知メールの送信者アドレスを指定します。                                      |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| notify_email_from_name             | Sender name to use in notification emails.                                                        |
+| notify_email_from_name             | プロジェクト作成時の通知メールの送信者名を指定します。                                            |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| parent_base_url                    | Parent URL of base_url                                                                            |
+| parent_base_url                    | 作成したプロジェクトの元となるURL(base_urlの親階層)を指定します。                                 |
+|                                    | 例) http://xx.yy.zz/trac とした時に、fooというプロジェクトを作成した場合、このプロジェクトの      |
+|                                    | base_url は http://xx.yy.zz/trac/foo となります。                                                 |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| project_activity_assessment_period | Number of days to evaluate the project activity.                                                  |
+| project_activity_assessment_period | プロジェクト一覧に表示するアクティビティを評価する日数を指定します。                              |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| project_activity_cache_ttl         | Time to live of cache(sec) for project activity.                                                  |
+| project_activity_cache_ttl         | アクティビティ情報のキャッシュの生存期間(sec)を指定します。                                       |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| project_info_cache_ttl             | Time to live of cache(sec) for project information.                                               |
+| project_info_cache_ttl             | プロジェクト情報のキャッシュの生存期間(sec)を指定します。                                         |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| project_list_link_url_suffix       | Path to be appended to the project url in project list page.                                      |
-|                                    | (e.x, if need login, set "/login" value in this option.)                                          |
+| project_list_link_url_suffix       | プロジェクト一覧のリンクURLに付加するパス文字列を指定します。                                     |
+|                                    | 例えば、ログインする必要がある場合は /login を指定します。                                        |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
-| trac_env_parent_dir                | Prent path of trac env directories.                                                               |
-|                                    | If not set this option, use TRAC_ENV_PARENT_DIR in python environment variables.                  |
+| trac_env_parent_dir                | Tracのプロジェクトを配置しているディレクトリのパスを指定します。                                  |
+|                                    | 指定がない場合は、Python環境変数のTRAC_ENV_PARENT_DIRが使用されます。                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------+
 
-Example::
+サンプル::
 
   [tracportal]
   ignore_projects = portal
@@ -133,36 +143,76 @@ Example::
   parent_base_url = http://xxx.yyy.zzz/trac/
   trac_env_parent_dir = /var/www/trac/envs
 
-For more information, please see the wiki:TracIni
+Tracの設定について、更に詳しい情報は wiki:TracIni をご覧ください。
 
-Screenshot
-==========
 
-**Project Index**
+スクリーンショット
+==================
+
+**プロジェクト一覧**
 
   .. image:: ./screenshot/project_list.png
      :scale: 60%
      :alt: Project Index
      :align: left
 
-**Dashboard**
+**ダッシュボード**
 
   .. image:: screenshot/dashboard.png
      :scale: 60 %
      :alt: Dashboard
      :align: left
 
-**Cross Search**
+**プロジェクト横断検索**
 
   .. image:: screenshot/cross_search.png
      :scale: 60 %
      :alt: Cross Search
      :align: left
 
-**Project Creation**
+**プロジェクト新規作成**
 
   .. image:: screenshot/project_creation.png
      :scale: 60 %
      :alt: Project Creation
      :align: left
 
+
+補足情報
+========
+
+
+ナビゲーションバーの変更
+------------------------
+
+ナビゲーションバーのリンクの並びを変えたい場合は trac.ini の [trac] セクションの mainnav で並びを設定することができます。
+
+例::
+
+  [trac]
+   mainnav = wiki, dashboard, cross_search, public_projects, available_projects, new_project
+
+さらに不要なリンクを非表示にしたり、名称を変えたい場合には [mainnav] セクションで設定することができます
+
+例::
+
+  [mavinnav]
+  ticket = disabled
+  wiki.label = お知らせ
+
+
+ポータル以外のプロジェクトにポータルのリンクを追加したい場合
+------------------------------------------------------------
+NavAddPlugin_ というプラグインで簡単にナビゲーションバーにリンクを追加することができます。
+
+例::
+
+  [components]
+  navadd.* = enabled
+
+  [navadd]
+  add_items = tracportal
+  tracportal.title = ポータル
+  tracportal.url = /trac/portal
+
+.. _NavAddPlugin: http://trac-hacks.org/wiki/NavAddPlugin
