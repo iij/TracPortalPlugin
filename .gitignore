@@ -25,3 +25,4 @@ trac/htdocs/js/messages/*.js
 *.iml
 .DS_Store
 .idea
+.python-version

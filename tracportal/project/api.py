@@ -12,7 +12,6 @@ from trac.core import Interface
 
 
 class IProjectCreationInterceptor(Interface):
-
     @staticmethod
     def pre_process(project_info, owner_info):
         """Call this handler before a creating Trac project.

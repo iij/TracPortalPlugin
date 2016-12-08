@@ -10,15 +10,14 @@
 import sys
 import time
 
-from trac.core import Component, implements
-from trac.web.api import IRequestFilter, IAuthenticator, IRequestHandler
 from trac.config import Option, IntOption
-from trac.web.auth import LoginModule
+from trac.core import Component, implements
 from trac.env import open_environment
+from trac.web.api import IRequestFilter, IAuthenticator, IRequestHandler
+from trac.web.auth import LoginModule
 
 
 class SyncAuth(Component):
-
     implements(IAuthenticator, IRequestFilter, IRequestHandler)
 
     auth_cookie_lifetime = IntOption('trac', 'auth_cookie_lifetime', 0)
@@ -89,6 +88,7 @@ class SyncAuth(Component):
                            "VALUES (%s, %s, %s, %s)",
                            (cookie.value, remote_user, req.remote_addr,
                             int(time.time())))
+
         # update the session cookie
         req.outcookie['trac_auth'] = cookie.value
         del req.outcookie['trac_auth']['expires']

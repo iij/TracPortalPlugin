@@ -15,8 +15,9 @@ except ImportError:
 
 from trac.core import Component, implements, ExtensionPoint
 from trac.web import IRequestHandler
-from tracportal.project_list.api import IProjectInfoProvider
+
 from tracportal.api import IProjectListProvider
+from tracportal.project_list.api import IProjectInfoProvider
 
 __author__ = 'yosinobu@iij.ad.jp'
 

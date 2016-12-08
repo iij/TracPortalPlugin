@@ -8,14 +8,12 @@
 # Created on 2011/05/10
 # @author: yosinobu@iij.ad.jp
 
-from  pkg_resources import resource_filename
-
 from genshi.builder import tag
-
+from  pkg_resources import resource_filename
 from trac.core import *
-from trac.web.chrome import INavigationContributor, ITemplateProvider, add_script, add_stylesheet
-from trac.web.api import IRequestHandler, IRequestFilter
 from trac.perm import IPermissionRequestor
+from trac.web.api import IRequestHandler, IRequestFilter
+from trac.web.chrome import INavigationContributor, ITemplateProvider, add_script, add_stylesheet
 
 from tracportal.api import IProjectListProvider
 from tracportal.i18n import _
@@ -23,7 +21,6 @@ from tracportal.project_list.api import IProjectInfoProvider
 
 
 class CrossSearchModule(Component):
-
     implements(INavigationContributor, IPermissionRequestor, IRequestHandler, ITemplateProvider)
     project_list_providers = ExtensionPoint(IProjectListProvider)
     project_info_providers = ExtensionPoint(IProjectInfoProvider)
@@ -33,6 +30,11 @@ class CrossSearchModule(Component):
         return 'cross_search'
 
     def get_navigation_items(self, req):
+        try:
+            import tracrpc
+        except ImportError:
+            self.log.info('TracPortalPlugin\'s search feature requires TracXMLRPC plugin.')
+            return
         if 'PORTAL_CROSS_SEARCH_VIEW' in req.perm:
             yield ('mainnav', 'cross_search',
                    tag.a(_('Cross Search'), href=req.href.cross_search(), accesskey=5))
@@ -99,4 +101,3 @@ class RedirectCrossSearch(Component):
 
     def post_process_request(self, req, template, data, content_type):
         return template, data, content_type
-

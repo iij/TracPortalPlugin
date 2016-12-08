@@ -10,16 +10,15 @@
 
 import time
 
+from trac.config import IntOption
 from trac.core import TracError
 from trac.resource import ResourceNotFound
-from trac.config import IntOption
 
-from tracportal.util import to_unixtime
 from tracportal.i18n import _
+from tracportal.util import to_unixtime
 
 
 class ProjectActivity(object):
-
     IntOption('tracportal', 'project_activity_cache_ttl', 86400,
               _('Time to live of cache(sec) for project activity.'))
 
@@ -65,7 +64,7 @@ class ProjectActivity(object):
 
     def get_total_month(self):
         return sum((self.changes_month, self.tickets_month,
-                   self.tickets_closed_month))
+                    self.tickets_closed_month))
 
     def is_expired(self, updated_at=None):
         cache_ttl = self.env.config.getint('tracportal', 'project_activity_cache_ttl', 86400)
@@ -83,7 +82,7 @@ class ProjectActivity(object):
         assert not self.exists, 'Cannot insert existing activity data.'
         if not self.env_name:
             raise TracError(_('Invalid Project ID (env_name) %s',
-                              (self.env_name, )))
+                              (self.env_name,)))
 
         @self.env.with_transaction(db)
         def do_insert(db):
@@ -105,7 +104,7 @@ class ProjectActivity(object):
         assert self.exists, 'Cannot update non-existent activity data.'
         if not self.env_name:
             raise TracError(_('Invalid Project ID (env_name) %s',
-                              (self.env_name, )))
+                              (self.env_name,)))
 
         @self.env.with_transaction(db)
         def do_update(db):
@@ -128,7 +127,7 @@ class ProjectActivity(object):
         assert self.exists, 'Cannot delete non-existent activity data.'
         if not self.env_name:
             raise TracError(_('Invalid Project ID (env_name) %s',
-                              (self.env_name, )))
+                              (self.env_name,)))
 
         @self.env.with_transaction(db)
         def do_delete(db):
@@ -139,7 +138,6 @@ class ProjectActivity(object):
 
 
 class ProjectInfo(object):
-
     IntOption('tracportal', 'project_info_cache_ttl', 86400,
               _('Time to live of cache(sec) for project information.'))
 
@@ -208,7 +206,7 @@ class ProjectInfo(object):
         assert self.exists, 'Cannot update non-existent project information.'
         if not self.id:
             raise TracError(_('Invalid Project ID (env_name) %s',
-                              (self.id, )))
+                              (self.id,)))
 
         @self.env.with_transaction(db)
         def do_update(db):
@@ -228,7 +226,7 @@ class ProjectInfo(object):
         assert self.exists, 'Cannot delete non-existent project information.'
         if not self.id:
             raise TracError(_('Invalid Project ID (env_name) %s',
-                              (self.id, )))
+                              (self.id,)))
 
         @self.env.with_transaction(db)
         def do_delete(db):

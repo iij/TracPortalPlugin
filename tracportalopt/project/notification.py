@@ -7,10 +7,9 @@
 # @author: yosinobu@iij.ad.jp
 """Notify project owner with email when the project created successfully."""
 from pkg_resources import resource_filename
-
+from trac.config import Option, ListOption
 from trac.core import Component, implements
 from trac.notification import Notify, NotifyEmail
-from trac.config import Option, ListOption
 from trac.web.chrome import ITemplateProvider
 
 from tracportal.i18n import _

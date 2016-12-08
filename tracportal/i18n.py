@@ -7,13 +7,13 @@
 # @author: yosinobu@iij.ad.jp
 
 from pkg_resources import resource_filename
-
 from trac.core import *
-from trac.util.translation import domain_functions
 from trac.env import IEnvironmentSetupParticipant
+from trac.util.translation import domain_functions
 
 _, tag_, N_, add_domain = domain_functions('tracportal',
                                            ('_', 'tag_', 'N_', 'add_domain'))
+
 
 class I18NLoader(Component):
     implements(IEnvironmentSetupParticipant)
