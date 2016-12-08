@@ -16,17 +16,17 @@ try:
     import babel
 
     extractors = [
-        ('**.py', 'python', None),
+        ('**.py', 'trac.dist:extract_python', None),
         ('**/templates/**.html', 'genshi', None),
         ('**/templates/**.txt', 'genshi',
-         {'template_class': 'genshi.template:TextTemplate'}),
+         {'template_class': 'genshi.template:NewTextTemplate'}),
     ]
     extra['message_extractors'] = {
         'tracportal': extractors,
         'tracportalopt': extractors,
     }
-    from trac.dist import get_l10n_js_cmdclass
 
+    from trac.dist import get_l10n_js_cmdclass
     extra['cmdclass'] = get_l10n_js_cmdclass()
 
 except ImportError:
@@ -34,7 +34,7 @@ except ImportError:
 
 setup(
     name='TracPortalPlugin',
-    version='0.1.1',
+    version='0.2',
     author='yosinobu',
     author_email='yosinobu@iij.ad.jp',
     description='Provide trac portal pages for multiple projects.',
@@ -42,16 +42,18 @@ setup(
     license='MIT',
     packages=find_packages(exclude=['*.tests']),
     package_data={
-        '': ['templates/*'],
+        '': ['templates/*', 'screenshot/*.png'],
         'tracportal': ['htdocs/*.*', 'htdocs/README', 'htdocs/js/*.*',
-                       'htdocs/js/messages/*.*', 'htdocs/css/*.*',
-                       'htdocs/guide/*', 'locale/*/LC_MESSAGES/*.mo',
+                       'htdocs/js/messages/*.*', 'htdocs/css/*.*', 'htdocs/guide/*',
+                       'locale/*.pot', 'locale/*/LC_MESSAGES/*.po', 'locale/*/LC_MESSAGES/*.mo',
                        'htdocs/css/smoothness/*.css', 'htdocs/css/smoothness/images/*.*'],
         'tracportalopt': []
     },
     zip_safe=True,
+    setup_requires=[
+        'Trac>=0.12',
+    ],
     install_requires=[
-        'setuptools>=0.6',
         'Trac>=0.12',
     ],
     extras_require={
