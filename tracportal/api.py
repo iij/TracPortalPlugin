@@ -7,16 +7,17 @@
 # @author: yosinobu@iij.ad.jp
 """Provide list of Trac environment name."""
 
-import os
 import dircache
+import os
 
-from trac.core import *
 from trac.config import ListOption
+from trac.core import *
 from trac.env import open_environment
 from trac.perm import PermissionSystem
 
 from tracportal.core import get_trac_env_parent_dir
 from tracportal.i18n import _
+
 
 class IProjectListProvider(Interface):
     """Extension point interface for adding sources for project project_list."""

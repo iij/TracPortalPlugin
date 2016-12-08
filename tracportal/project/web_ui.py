@@ -10,9 +10,10 @@
 
 import os
 import re
+
+from genshi.builder import tag
 from pkg_resources import resource_filename
 from trac.config import Option
-
 from trac.core import *
 from trac.env import Environment
 from trac.perm import IPermissionRequestor, PermissionSystem
@@ -21,8 +22,6 @@ from trac.web.api import IRequestHandler
 from trac.web.chrome import ITemplateProvider, INavigationContributor, add_stylesheet, add_warning
 from trac.web.session import Session
 from trac.wiki.admin import WikiAdmin
-
-from genshi.builder import tag
 
 from tracportal.core import get_parent_base_url, get_trac_env_parent_dir
 from tracportal.i18n import _
@@ -169,7 +168,7 @@ class NewProject(Component):
         project_id = project.get('id')
         if not project_id:
             raise ValidationError(_(self.message_required, **kwargs))
-        if not re.match('^[\w\d\-]*$', project_id):
+        if not re.match('^[a-z_\d\-]*$', project_id):
             raise ValidationError(_(self.message_invalid_character, **kwargs))
         if not project_id[0].isalpha():
             raise ValidationError(_(self.message_startswith_alpha, **kwargs))
@@ -223,7 +222,6 @@ class NewProject(Component):
 
 
 class ProjectAlreadyExists(Exception):
-
     def __init__(self): pass
 
 

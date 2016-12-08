@@ -12,18 +12,18 @@ import os
 import time
 from datetime import datetime
 
-from trac.core import *
 from trac.config import IntOption
+from trac.core import *
 from trac.env import open_environment
-from trac.versioncontrol.api import DbRepositoryProvider
 from trac.resource import ResourceNotFound
 from trac.util.datefmt import localtz, to_datetime
+from trac.versioncontrol.api import DbRepositoryProvider
 
 from tracportal.api import IProjectListProvider
 from tracportal.core import get_trac_env_parent_dir
 from tracportal.i18n import _
-from tracportal.util import to_tractime
 from tracportal.project_list.model import ProjectActivity, ProjectInfo
+from tracportal.util import to_tractime
 
 
 class IProjectActivityDataProvider(Interface):
@@ -36,7 +36,6 @@ class IProjectActivityDataProvider(Interface):
 
 
 class DefaultActivityDataProvider(Component):
-
     implements(IProjectActivityDataProvider)
     project_list_providers = ExtensionPoint(IProjectListProvider)
 
@@ -108,10 +107,12 @@ class DefaultActivityDataProvider(Component):
         tickets_month = 0
         tickets_closed = 0
         tickets_closed_month = 0
+
         def get_one(sql):
             cursor = db.cursor()
             cursor.execute(sql)
             return cursor.fetchone()[0]
+
         # count tickets
         tickets = get_one("SELECT count(*) FROM ticket")
         # count closed tickets
@@ -134,7 +135,6 @@ class DefaultActivityDataProvider(Component):
 
 
 class IProjectInfoProvider(Interface):
-
     @staticmethod
     def get_info(env_name):
         """Return the project information.
@@ -147,7 +147,6 @@ class IProjectInfoProvider(Interface):
 
 
 class DefaultProjectInfoProvider(Component):
-
     implements(IProjectInfoProvider)
 
     # IProjectInfoProvider methods

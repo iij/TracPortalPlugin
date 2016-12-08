@@ -8,15 +8,13 @@
 # Created on 2013/05/20
 # @author: yosinobu@iij.ad.jp
 
-from  pkg_resources import resource_filename
-
 from genshi.builder import tag
-
+from pkg_resources import resource_filename
 from trac.core import *
+from trac.perm import IPermissionRequestor
+from trac.web.api import IRequestHandler
 from trac.web.chrome import INavigationContributor, ITemplateProvider, \
     add_script, add_stylesheet, add_script_data
-from trac.web.api import IRequestHandler
-from trac.perm import IPermissionRequestor
 
 from tracportal.api import IProjectListProvider
 from tracportal.i18n import _
@@ -34,6 +32,11 @@ class DashboardModule(Component):
         return 'dashboard'
 
     def get_navigation_items(self, req):
+        try:
+            import tracrpc
+        except ImportError:
+            self.log.info('TracPortalPlugin\'s dashboard feature requires TracXMLRPC plugin.')
+            return
         if 'PORTAL_DASHBOARD_VIEW' in req.perm:
             yield ('mainnav', 'dashboard',
                    tag.a(_('Dashboard'), href=req.href('/dashboard'), accesskey=6))

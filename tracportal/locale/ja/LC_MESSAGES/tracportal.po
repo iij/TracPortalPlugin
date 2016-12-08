@@ -5,33 +5,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TracPortal 0.0.2\n"
 "Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
-"POT-Creation-Date: 2013-07-01 13:42+0900\n"
+"POT-Creation-Date: 2016-12-08 17:29+0900\n"
 "PO-Revision-Date: 2011-06-29 15:34+0900\n"
 "Last-Translator: Yoshinobu Fujimoto <yosinobu@iij.ad.jp>\n"
+"Language: ja\n"
 "Language-Team: IDP-SUPPORT <idp-support@iij.ad.jp>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 2.3.4\n"
 
-#: tracportalopt/project/notification.py:24
+#: tracportalopt/project/notification.py:23
 msgid "Sender name to use in notification emails."
 msgstr "通知メールに使用する送信者名を設定します。"
 
-#: tracportalopt/project/notification.py:25
+#: tracportalopt/project/notification.py:24
 msgid "Sender address to use in notification emails."
 msgstr "通知メールに使用する送信者アドレスを設定します。"
 
-#: tracportalopt/project/notification.py:27
+#: tracportalopt/project/notification.py:26
 msgid ""
 "Email address(es) to always send notifications to, addresses can be seen "
 "by all recipients (Cc:)."
 msgstr "常に通知メールを送るメールアドレスを設定します。 設定したアドレスは、すべての受信者がみることができます (Cc:)。"
 
-#: tracportalopt/project/notification.py:66
+#: tracportalopt/project/notification.py:28
 msgid "Ready to start Trac project!"
-msgstr "Tracプロジェクト新規登録完了のご連絡"
+msgstr "プロジェクト新規登録完了のご連絡"
+
+#: tracportalopt/project/notification.py:29
+msgid "Subject in notification emails."
+msgstr "通知メールの件名(Subject)を設定します。"
 
 #: tracportalopt/project/templates/project_creation_notify_email.txt:1
 msgid "Dear"
@@ -92,7 +97,7 @@ msgstr ""
 "よろしくお願いします。\n"
 "\n"
 
-#: tracportal/api.py:47
+#: tracportal/api.py:48
 msgid "List of Trac environment's name that is ignore projects in the TracPortal."
 msgstr "ポータルで無視するTrac環境の名称(ディレクトリ名)をリストで指定します。"
 
@@ -106,48 +111,48 @@ msgstr "Tracのプロジェクトを配置しているディレクトリのパ�
 msgid "Parent URL of base_url."
 msgstr "base_urlの上位階層のURLを指定します"
 
-#: tracportal/dashboard/web_ui.py:39
-#: tracportal/dashboard/templates/dashboard.html:12
-#: tracportal/dashboard/templates/dashboard.html:16
+#: tracportal/dashboard/templates/dashboard.html:11
+#: tracportal/dashboard/templates/dashboard.html:15
+#: tracportal/dashboard/web_ui.py:42
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: tracportal/dashboard/templates/dashboard.html:21
+#: tracportal/dashboard/templates/dashboard.html:20
 msgid "Recent Milestone"
 msgstr "直近のマイルストーン"
 
-#: tracportal/dashboard/templates/dashboard.html:23
+#: tracportal/dashboard/templates/dashboard.html:22
 msgid "Show the recent milestones in projects which belong you."
 msgstr "所属しているプロジェクトの直近のマイルストーンを表示します。"
 
-#: tracportal/dashboard/templates/dashboard.html:32
+#: tracportal/dashboard/templates/dashboard.html:31
 msgid "Recent Updated"
 msgstr "最近の更新"
 
-#: tracportal/dashboard/templates/dashboard.html:34
+#: tracportal/dashboard/templates/dashboard.html:33
 msgid "Show the timeline past of 3 days in projects which belong you."
 msgstr "所属しているプロジェクトの過去３日間のタイムラインを表示します。"
 
-#: tracportal/dashboard/templates/dashboard.html:45
+#: tracportal/dashboard/templates/dashboard.html:44
 msgid "Active Tickets"
 msgstr "アクティブチケット"
 
-#: tracportal/dashboard/templates/dashboard.html:47
+#: tracportal/dashboard/templates/dashboard.html:46
 msgid "Show the active tickets which you involved(owner, reporter)."
 msgstr "あなたが担当している、もしくは報告したチケットを表示します。"
 
-#: tracportal/project/web_ui.py:42
+#: tracportal/project/web_ui.py:41
 msgid ""
 "Inherit config file. When create a project, set the [inherit] file option"
 " in the project config."
 msgstr "継承する設定ファイル(trac.ini)のパスを指定します。この設定値は、プロジェクト作成じの --inheritオプションの指定に使用されます。"
 
-#: tracportal/project/web_ui.py:46
+#: tracportal/project/web_ui.py:45
 #, python-format
 msgid "[%(category)s] %(field_name)s is required."
 msgstr "「%(category)s」 %(field_name)s を入力してください。"
 
-#: tracportal/project/web_ui.py:47
+#: tracportal/project/web_ui.py:46
 #, python-format
 msgid ""
 "[%(category)s] %(field_name)s is used invalid characters.(Usable "
@@ -156,251 +161,251 @@ msgstr ""
 "「%(category)s」 %(field_name)s に使用できない文字が含まれています。(使用可能な文字: アルファベット[a-z], "
 "数字[0-9], アンダースコア[\"_\"])"
 
-#: tracportal/project/web_ui.py:49
+#: tracportal/project/web_ui.py:48
 #, python-format
 msgid "[%(category)s] %(field_name)s need to start with alphabet[a-z]."
 msgstr "「%(category)s」 %(field_name)s の先頭の文字はアルファベット[a-z]を指定してください。"
 
-#: tracportal/project/web_ui.py:66
-#: tracportal/project/templates/new_project.html:12
-#: tracportal/project/templates/new_project.html:23
+#: tracportal/project/templates/new_project.html:11
+#: tracportal/project/templates/new_project.html:22
+#: tracportal/project/web_ui.py:65
 msgid "New Project"
 msgstr "プロジェクト新規作成"
 
-#: tracportal/project/web_ui.py:122
+#: tracportal/project/web_ui.py:121
 #, python-format
 msgid "Successfully create a project. Please access to [%(url)s]."
 msgstr "プロジェクトを作成しました。[%(url)s] から利用することができます。"
 
-#: tracportal/project/web_ui.py:130
+#: tracportal/project/web_ui.py:129
 #, python-format
 msgid "Project \"%(project_id)s\" already exists."
 msgstr "プロジェクト「%(project_id)s」は既に存在するため、作成できません。"
 
-#: tracportal/project/web_ui.py:147
-#: tracportal/project/templates/new_project.html:62
+#: tracportal/project/templates/new_project.html:61
+#: tracportal/project/web_ui.py:146
 msgid "Project Owner"
 msgstr "プロジェクト責任者"
 
-#: tracportal/project/web_ui.py:148
-#: tracportal/project/templates/new_project.html:65
+#: tracportal/project/templates/new_project.html:64
+#: tracportal/project/web_ui.py:147
 msgid "User ID"
 msgstr "ユーザID"
 
-#: tracportal/project/web_ui.py:158
-#: tracportal/project/templates/new_project.html:83
+#: tracportal/project/templates/new_project.html:82
+#: tracportal/project/web_ui.py:157
 msgid "Email"
 msgstr "メールアドレス"
 
-#: tracportal/project/web_ui.py:161
-#: tracportal/project/templates/new_project.html:74
+#: tracportal/project/templates/new_project.html:73
+#: tracportal/project/web_ui.py:160
 msgid "Fullname"
 msgstr "名前"
 
-#: tracportal/project/web_ui.py:166
-#: tracportal/project/templates/new_project.html:31
+#: tracportal/project/templates/new_project.html:30
+#: tracportal/project/web_ui.py:165
 msgid "Project Information"
 msgstr "プロジェクト情報"
 
-#: tracportal/project/web_ui.py:167
-#: tracportal/project/templates/new_project.html:34
+#: tracportal/project/templates/new_project.html:33
+#: tracportal/project/web_ui.py:166
 msgid "Project ID"
 msgstr "プロジェクトID"
 
-#: tracportal/project/web_ui.py:177
-#: tracportal/project/templates/new_project.html:43
+#: tracportal/project/templates/new_project.html:42
+#: tracportal/project/web_ui.py:176
 msgid "Project Name"
 msgstr "プロジェクト名"
 
-#: tracportal/project/templates/new_project.html:26
+#: tracportal/project/templates/new_project.html:25
 msgid "Please input all fields and click the \"Create Project\" button."
 msgstr "すべての項目を入力し、「プロジェクト作成」ボタンをクリックしてください。"
 
-#: tracportal/project/templates/new_project.html:38
+#: tracportal/project/templates/new_project.html:37
 msgid "(e.x. foo)"
 msgstr "例: foo"
 
-#: tracportal/project/templates/new_project.html:47
+#: tracportal/project/templates/new_project.html:46
 msgid "(e.x. Project Foo)"
 msgstr "例: Fooプロジェクト"
 
-#: tracportal/project/templates/new_project.html:52
+#: tracportal/project/templates/new_project.html:51
 msgid "Description"
 msgstr "概要"
 
-#: tracportal/project/templates/new_project.html:69
+#: tracportal/project/templates/new_project.html:68
 msgid "(e.x. taro)"
 msgstr "例: taro"
 
-#: tracportal/project/templates/new_project.html:78
+#: tracportal/project/templates/new_project.html:77
 msgid "(e.x. Taro Yamada)"
 msgstr "例: 山田 太郎"
 
-#: tracportal/project/templates/new_project.html:87
+#: tracportal/project/templates/new_project.html:86
 msgid "(e.x. taro@example.com)"
 msgstr "例: taro@example.com"
 
-#: tracportal/project/templates/new_project.html:94
+#: tracportal/project/templates/new_project.html:93
 msgid "Create Project"
 msgstr "プロジェクト作成"
 
-#: tracportal/project_list/api.py:45 tracportal/project_list/web_ui.py:38
-#: tracportal/project_list/web_ui.py:139
+#: tracportal/project_list/api.py:44 tracportal/project_list/web_ui.py:37
+#: tracportal/project_list/web_ui.py:137
 msgid "Number of days to evaluate the project activity."
 msgstr "アクティビティを評価する日数です。"
 
-#: tracportal/project_list/model.py:24
+#: tracportal/project_list/model.py:23
 msgid "Time to live of cache(sec) for project activity."
 msgstr "アクティビティデータのキャッシュの生存期間(sec)を指定します。"
 
-#: tracportal/project_list/model.py:50
+#: tracportal/project_list/model.py:49
 #, python-format
 msgid "Project Activity %(name)s does not exist."
 msgstr "%(name)s はアクティビティが存在しません．"
 
-#: tracportal/project_list/model.py:86 tracportal/project_list/model.py:108
-#: tracportal/project_list/model.py:131 tracportal/project_list/model.py:192
-#: tracportal/project_list/model.py:211 tracportal/project_list/model.py:231
+#: tracportal/project_list/model.py:85 tracportal/project_list/model.py:107
+#: tracportal/project_list/model.py:130 tracportal/project_list/model.py:190
+#: tracportal/project_list/model.py:209 tracportal/project_list/model.py:229
 #, python-format
 msgid "Invalid Project ID (env_name) %s"
 msgstr "プロジェクト ID %s は無効です．"
 
-#: tracportal/project_list/model.py:144
+#: tracportal/project_list/model.py:142
 msgid "Time to live of cache(sec) for project information."
 msgstr "プロジェクト情報のキャッシュの生存期間(sec)を指定します。"
 
-#: tracportal/project_list/model.py:166
+#: tracportal/project_list/model.py:164
 #, python-format
 msgid "Project Information %(name)s does not exist."
 msgstr "%(name)s のプロジェクト情報が見付かりません。"
 
-#: tracportal/project_list/web_ui.py:40 tracportal/project_list/web_ui.py:141
+#: tracportal/project_list/web_ui.py:39 tracportal/project_list/web_ui.py:139
 msgid ""
 "Path to be appended to the project url in project list page. (e.x, if "
 "need login, set \"/login\" value in this option.)"
 msgstr "プロジェクト一覧のリンクURLに付加するパス文字列を指定します。(例えば、ログインする必要がある場合は \"/login\" を指定します。)"
 
-#: tracportal/project_list/web_ui.py:51 tracportal/project_list/web_ui.py:123
+#: tracportal/project_list/web_ui.py:50 tracportal/project_list/web_ui.py:122
 msgid "Available Projects"
 msgstr "所属プロジェクト一覧"
 
-#: tracportal/project_list/web_ui.py:152 tracportal/project_list/web_ui.py:224
+#: tracportal/project_list/web_ui.py:150 tracportal/project_list/web_ui.py:222
 msgid "Public Projects"
 msgstr "公開プロジェクト一覧"
 
-#: tracportal/project_list/templates/project_list.html:19
+#: tracportal/project_list/templates/project_list.html:18
 msgid "This is a summary of the projects running in this Trac instance."
 msgstr "このTrac上で利用しているプロジェクトのサマリです。"
 
-#: tracportal/project_list/templates/project_list.html:21
+#: tracportal/project_list/templates/project_list.html:20
 msgid "filter:"
 msgstr "絞り込み検索: "
 
-#: tracportal/project_list/templates/project_list.html:24
+#: tracportal/project_list/templates/project_list.html:23
 msgid "(AND to Search, separated by a space)"
 msgstr "(※スペース区切りはAND条件での絞り込みです)"
 
-#: tracportal/project_list/templates/project_list.html:46
+#: tracportal/project_list/templates/project_list.html:45
 msgid "commits"
 msgstr "コミット数"
 
-#: tracportal/project_list/templates/project_list.html:47
+#: tracportal/project_list/templates/project_list.html:46
 msgid "tickets"
 msgstr "チケット数"
 
-#: tracportal/project_list/templates/project_list.html:48
+#: tracportal/project_list/templates/project_list.html:47
 msgid "Activity Graph"
 msgstr "アクティビティ"
 
-#: tracportal/project_list/templates/project_list.html:50
+#: tracportal/project_list/templates/project_list.html:49
 msgid "month"
 msgstr "当月"
 
-#: tracportal/project_list/templates/project_list.html:55
+#: tracportal/project_list/templates/project_list.html:54
 msgid "Activity Month Graph"
 msgstr "アクティビティ(一か月間の活動)"
 
-#: tracportal/project_list/templates/project_list.html:63
+#: tracportal/project_list/templates/project_list.html:62
 msgid "total"
 msgstr "合計"
 
-#: tracportal/project_list/templates/project_list.html:68
+#: tracportal/project_list/templates/project_list.html:67
 msgid "Activity Total Graph"
 msgstr "アクティビティ(全体の活動)"
 
-#: tracportal/project_list/templates/project_list.html:81
+#: tracportal/project_list/templates/project_list.html:80
 msgid "Error"
 msgstr "エラー"
 
-#: tracportal/project_list/templates/project_list.html:89
+#: tracportal/project_list/templates/project_list.html:88
 msgid "The charts underneath each project represent relative activity levels."
 msgstr "チャートは各プロジェクトのアクティビティのレベルを示します。"
 
-#: tracportal/project_list/templates/project_list.html:90
+#: tracportal/project_list/templates/project_list.html:89
 msgid ""
 "The top half represents monthly activity and the bottom half is total "
 "activity."
 msgstr "表の上段は1ヵ月の活動を示し、下段は全体の活動を示します。"
 
-#: tracportal/search/web_ui.py:38
-#: tracportal/search/templates/cross_search.html:12
-#: tracportal/search/templates/cross_search.html:16
+#: tracportal/search/templates/cross_search.html:11
+#: tracportal/search/templates/cross_search.html:15
+#: tracportal/search/web_ui.py:40
 msgid "Cross Search"
 msgstr "プロジェクト横断検索"
 
-#: tracportal/search/templates/cross_search.html:17
+#: tracportal/search/templates/cross_search.html:16
 msgid "You can search selected projects."
 msgstr "複数のプロジェクトから横断的に検索することができます。"
 
-#: tracportal/search/templates/cross_search.html:21
+#: tracportal/search/templates/cross_search.html:20
 msgid "Search"
 msgstr "検索"
 
-#: tracportal/search/templates/cross_search.html:25
+#: tracportal/search/templates/cross_search.html:24
 msgid "Search Options"
 msgstr "検索オプション"
 
-#: tracportal/search/templates/cross_search.html:27
+#: tracportal/search/templates/cross_search.html:26
 msgid "Search Filters:"
 msgstr "絞り込み:"
 
-#: tracportal/search/templates/cross_search.html:31
+#: tracportal/search/templates/cross_search.html:30
 msgid "Tickets"
 msgstr "チケット"
 
-#: tracportal/search/templates/cross_search.html:34
+#: tracportal/search/templates/cross_search.html:33
 msgid "Changesets"
 msgstr "チェンジセット"
 
-#: tracportal/search/templates/cross_search.html:37
+#: tracportal/search/templates/cross_search.html:36
 msgid "Milestone"
 msgstr "マイルストーン"
 
-#: tracportal/search/templates/cross_search.html:40
+#: tracportal/search/templates/cross_search.html:39
 msgid "Wiki"
 msgstr "Wiki"
 
-#: tracportal/search/templates/cross_search.html:43
+#: tracportal/search/templates/cross_search.html:42
 msgid "Ignore Default Wiki Pages"
 msgstr "TracデフォルトのWikiページを除外"
 
-#: tracportal/search/templates/cross_search.html:47
+#: tracportal/search/templates/cross_search.html:46
 msgid "Search Target(Projects):"
 msgstr "検索対象(プロジェクト):"
 
-#: tracportal/search/templates/cross_search.html:51
+#: tracportal/search/templates/cross_search.html:50
 msgid "All Projects"
 msgstr "全プロジェクト"
 
-#: tracportal/search/templates/cross_search.html:65
+#: tracportal/search/templates/cross_search.html:64
 msgid "Maximum Results(For each projects):"
 msgstr "最大表示件数(プロジェクト毎):"
 
-#: tracportal/search/templates/cross_search.html:69
+#: tracportal/search/templates/cross_search.html:68
 msgid "Hide no search result items:"
 msgstr "検索結果の無いプロジェクトを非表示:"
 
-#: tracportal/search/templates/cross_search.html:77
+#: tracportal/search/templates/cross_search.html:76
 msgid "Search Results:"
 msgstr "検索結果:"
 

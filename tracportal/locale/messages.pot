@@ -1,39 +1,43 @@
 # Translations template for TracPortalPlugin.
-# Copyright (C) 2013 Internet Initiative Japan Inc.
+# Copyright (C) 2016 Internet Initiative Japan Inc.
 # This file is distributed under the same license as the
 # TracPortalPlugin project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: TracPortalPlugin 0.1.0\n"
+"Project-Id-Version: TracPortalPlugin 0.1.2\n"
 "Report-Msgid-Bugs-To: yosinobu@iij.ad.jp\n"
-"POT-Creation-Date: 2013-07-01 13:42+0900\n"
+"POT-Creation-Date: 2016-12-08 17:29+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 2.3.4\n"
 
-#: tracportalopt/project/notification.py:24
+#: tracportalopt/project/notification.py:23
 msgid "Sender name to use in notification emails."
 msgstr ""
 
-#: tracportalopt/project/notification.py:25
+#: tracportalopt/project/notification.py:24
 msgid "Sender address to use in notification emails."
 msgstr ""
 
-#: tracportalopt/project/notification.py:27
+#: tracportalopt/project/notification.py:26
 msgid ""
 "Email address(es) to always send notifications to, addresses can be "
 "seen by all recipients (Cc:)."
 msgstr ""
 
-#: tracportalopt/project/notification.py:66
+#: tracportalopt/project/notification.py:28
 msgid "Ready to start Trac project!"
+msgstr ""
+
+#: tracportalopt/project/notification.py:29
+msgid "Subject in notification emails."
 msgstr ""
 
 #: tracportalopt/project/templates/project_creation_notify_email.txt:1
@@ -84,7 +88,7 @@ msgid ""
 "--"
 msgstr ""
 
-#: tracportal/api.py:47
+#: tracportal/api.py:48
 msgid ""
 "List of Trac environment's name that is ignore projects in the "
 "TracPortal."
@@ -100,304 +104,304 @@ msgstr ""
 msgid "Parent URL of base_url."
 msgstr ""
 
-#: tracportal/dashboard/web_ui.py:39
-#: tracportal/dashboard/templates/dashboard.html:12
-#: tracportal/dashboard/templates/dashboard.html:16
+#: tracportal/dashboard/templates/dashboard.html:11
+#: tracportal/dashboard/templates/dashboard.html:15
+#: tracportal/dashboard/web_ui.py:42
 msgid "Dashboard"
 msgstr ""
 
-#: tracportal/dashboard/templates/dashboard.html:21
+#: tracportal/dashboard/templates/dashboard.html:20
 msgid "Recent Milestone"
 msgstr ""
 
-#: tracportal/dashboard/templates/dashboard.html:23
+#: tracportal/dashboard/templates/dashboard.html:22
 msgid "Show the recent milestones in projects which belong you."
 msgstr ""
 
-#: tracportal/dashboard/templates/dashboard.html:32
+#: tracportal/dashboard/templates/dashboard.html:31
 msgid "Recent Updated"
 msgstr ""
 
-#: tracportal/dashboard/templates/dashboard.html:34
+#: tracportal/dashboard/templates/dashboard.html:33
 msgid "Show the timeline past of 3 days in projects which belong you."
 msgstr ""
 
-#: tracportal/dashboard/templates/dashboard.html:45
+#: tracportal/dashboard/templates/dashboard.html:44
 msgid "Active Tickets"
 msgstr ""
 
-#: tracportal/dashboard/templates/dashboard.html:47
+#: tracportal/dashboard/templates/dashboard.html:46
 msgid "Show the active tickets which you involved(owner, reporter)."
 msgstr ""
 
-#: tracportal/project/web_ui.py:42
+#: tracportal/project/web_ui.py:41
 msgid ""
 "Inherit config file. When create a project, set the [inherit] file "
 "option in the project config."
 msgstr ""
 
-#: tracportal/project/web_ui.py:46
+#: tracportal/project/web_ui.py:45
 #, python-format
 msgid "[%(category)s] %(field_name)s is required."
 msgstr ""
 
-#: tracportal/project/web_ui.py:47
+#: tracportal/project/web_ui.py:46
 #, python-format
 msgid ""
 "[%(category)s] %(field_name)s is used invalid characters.(Usable "
 "characters: alphabet[a-z], number[0-9], underscore[\"_\"])"
 msgstr ""
 
-#: tracportal/project/web_ui.py:49
+#: tracportal/project/web_ui.py:48
 #, python-format
 msgid "[%(category)s] %(field_name)s need to start with alphabet[a-z]."
 msgstr ""
 
-#: tracportal/project/web_ui.py:66
-#: tracportal/project/templates/new_project.html:12
-#: tracportal/project/templates/new_project.html:23
+#: tracportal/project/templates/new_project.html:11
+#: tracportal/project/templates/new_project.html:22
+#: tracportal/project/web_ui.py:65
 msgid "New Project"
 msgstr ""
 
-#: tracportal/project/web_ui.py:122
+#: tracportal/project/web_ui.py:121
 #, python-format
 msgid "Successfully create a project. Please access to [%(url)s]."
 msgstr ""
 
-#: tracportal/project/web_ui.py:130
+#: tracportal/project/web_ui.py:129
 #, python-format
 msgid "Project \"%(project_id)s\" already exists."
 msgstr ""
 
-#: tracportal/project/web_ui.py:147
-#: tracportal/project/templates/new_project.html:62
+#: tracportal/project/templates/new_project.html:61
+#: tracportal/project/web_ui.py:146
 msgid "Project Owner"
 msgstr ""
 
-#: tracportal/project/web_ui.py:148
-#: tracportal/project/templates/new_project.html:65
+#: tracportal/project/templates/new_project.html:64
+#: tracportal/project/web_ui.py:147
 msgid "User ID"
 msgstr ""
 
-#: tracportal/project/web_ui.py:158
-#: tracportal/project/templates/new_project.html:83
+#: tracportal/project/templates/new_project.html:82
+#: tracportal/project/web_ui.py:157
 msgid "Email"
 msgstr ""
 
-#: tracportal/project/web_ui.py:161
-#: tracportal/project/templates/new_project.html:74
+#: tracportal/project/templates/new_project.html:73
+#: tracportal/project/web_ui.py:160
 msgid "Fullname"
 msgstr ""
 
-#: tracportal/project/web_ui.py:166
-#: tracportal/project/templates/new_project.html:31
+#: tracportal/project/templates/new_project.html:30
+#: tracportal/project/web_ui.py:165
 msgid "Project Information"
 msgstr ""
 
-#: tracportal/project/web_ui.py:167
-#: tracportal/project/templates/new_project.html:34
+#: tracportal/project/templates/new_project.html:33
+#: tracportal/project/web_ui.py:166
 msgid "Project ID"
 msgstr ""
 
-#: tracportal/project/web_ui.py:177
-#: tracportal/project/templates/new_project.html:43
+#: tracportal/project/templates/new_project.html:42
+#: tracportal/project/web_ui.py:176
 msgid "Project Name"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:26
+#: tracportal/project/templates/new_project.html:25
 msgid "Please input all fields and click the \"Create Project\" button."
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:38
+#: tracportal/project/templates/new_project.html:37
 msgid "(e.x. foo)"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:47
+#: tracportal/project/templates/new_project.html:46
 msgid "(e.x. Project Foo)"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:52
+#: tracportal/project/templates/new_project.html:51
 msgid "Description"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:69
+#: tracportal/project/templates/new_project.html:68
 msgid "(e.x. taro)"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:78
+#: tracportal/project/templates/new_project.html:77
 msgid "(e.x. Taro Yamada)"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:87
+#: tracportal/project/templates/new_project.html:86
 msgid "(e.x. taro@example.com)"
 msgstr ""
 
-#: tracportal/project/templates/new_project.html:94
+#: tracportal/project/templates/new_project.html:93
 msgid "Create Project"
 msgstr ""
 
-#: tracportal/project_list/api.py:45 tracportal/project_list/web_ui.py:38
-#: tracportal/project_list/web_ui.py:139
+#: tracportal/project_list/api.py:44 tracportal/project_list/web_ui.py:37
+#: tracportal/project_list/web_ui.py:137
 msgid "Number of days to evaluate the project activity."
 msgstr ""
 
-#: tracportal/project_list/model.py:24
+#: tracportal/project_list/model.py:23
 msgid "Time to live of cache(sec) for project activity."
 msgstr ""
 
-#: tracportal/project_list/model.py:50
+#: tracportal/project_list/model.py:49
 #, python-format
 msgid "Project Activity %(name)s does not exist."
 msgstr ""
 
-#: tracportal/project_list/model.py:86 tracportal/project_list/model.py:108
-#: tracportal/project_list/model.py:131
-#: tracportal/project_list/model.py:192
-#: tracportal/project_list/model.py:211
-#: tracportal/project_list/model.py:231
+#: tracportal/project_list/model.py:85 tracportal/project_list/model.py:107
+#: tracportal/project_list/model.py:130
+#: tracportal/project_list/model.py:190
+#: tracportal/project_list/model.py:209
+#: tracportal/project_list/model.py:229
 #, python-format
 msgid "Invalid Project ID (env_name) %s"
 msgstr ""
 
-#: tracportal/project_list/model.py:144
+#: tracportal/project_list/model.py:142
 msgid "Time to live of cache(sec) for project information."
 msgstr ""
 
-#: tracportal/project_list/model.py:166
+#: tracportal/project_list/model.py:164
 #, python-format
 msgid "Project Information %(name)s does not exist."
 msgstr ""
 
-#: tracportal/project_list/web_ui.py:40
-#: tracportal/project_list/web_ui.py:141
+#: tracportal/project_list/web_ui.py:39
+#: tracportal/project_list/web_ui.py:139
 msgid ""
 "Path to be appended to the project url in project list page. (e.x, if"
 " need login, set \"/login\" value in this option.)"
 msgstr ""
 
-#: tracportal/project_list/web_ui.py:51
-#: tracportal/project_list/web_ui.py:123
+#: tracportal/project_list/web_ui.py:50
+#: tracportal/project_list/web_ui.py:122
 msgid "Available Projects"
 msgstr ""
 
-#: tracportal/project_list/web_ui.py:152
-#: tracportal/project_list/web_ui.py:224
+#: tracportal/project_list/web_ui.py:150
+#: tracportal/project_list/web_ui.py:222
 msgid "Public Projects"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:19
+#: tracportal/project_list/templates/project_list.html:18
 msgid "This is a summary of the projects running in this Trac instance."
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:21
+#: tracportal/project_list/templates/project_list.html:20
 msgid "filter:"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:24
+#: tracportal/project_list/templates/project_list.html:23
 msgid "(AND to Search, separated by a space)"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:46
+#: tracportal/project_list/templates/project_list.html:45
 msgid "commits"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:47
+#: tracportal/project_list/templates/project_list.html:46
 msgid "tickets"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:48
+#: tracportal/project_list/templates/project_list.html:47
 msgid "Activity Graph"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:50
+#: tracportal/project_list/templates/project_list.html:49
 msgid "month"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:55
+#: tracportal/project_list/templates/project_list.html:54
 msgid "Activity Month Graph"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:63
+#: tracportal/project_list/templates/project_list.html:62
 msgid "total"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:68
+#: tracportal/project_list/templates/project_list.html:67
 msgid "Activity Total Graph"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:81
+#: tracportal/project_list/templates/project_list.html:80
 msgid "Error"
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:89
+#: tracportal/project_list/templates/project_list.html:88
 msgid "The charts underneath each project represent relative activity levels."
 msgstr ""
 
-#: tracportal/project_list/templates/project_list.html:90
+#: tracportal/project_list/templates/project_list.html:89
 msgid ""
 "The top half represents monthly activity and the bottom half is total"
 " activity."
 msgstr ""
 
-#: tracportal/search/web_ui.py:38
-#: tracportal/search/templates/cross_search.html:12
-#: tracportal/search/templates/cross_search.html:16
+#: tracportal/search/templates/cross_search.html:11
+#: tracportal/search/templates/cross_search.html:15
+#: tracportal/search/web_ui.py:40
 msgid "Cross Search"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:17
+#: tracportal/search/templates/cross_search.html:16
 msgid "You can search selected projects."
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:21
+#: tracportal/search/templates/cross_search.html:20
 msgid "Search"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:25
+#: tracportal/search/templates/cross_search.html:24
 msgid "Search Options"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:27
+#: tracportal/search/templates/cross_search.html:26
 msgid "Search Filters:"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:31
+#: tracportal/search/templates/cross_search.html:30
 msgid "Tickets"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:34
+#: tracportal/search/templates/cross_search.html:33
 msgid "Changesets"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:37
+#: tracportal/search/templates/cross_search.html:36
 msgid "Milestone"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:40
+#: tracportal/search/templates/cross_search.html:39
 msgid "Wiki"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:43
+#: tracportal/search/templates/cross_search.html:42
 msgid "Ignore Default Wiki Pages"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:47
+#: tracportal/search/templates/cross_search.html:46
 msgid "Search Target(Projects):"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:51
+#: tracportal/search/templates/cross_search.html:50
 msgid "All Projects"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:65
+#: tracportal/search/templates/cross_search.html:64
 msgid "Maximum Results(For each projects):"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:69
+#: tracportal/search/templates/cross_search.html:68
 msgid "Hide no search result items:"
 msgstr ""
 
-#: tracportal/search/templates/cross_search.html:77
+#: tracportal/search/templates/cross_search.html:76
 msgid "Search Results:"
 msgstr ""
 

@@ -7,10 +7,9 @@
 # @author: yosinobu@iij.ad.jp
 """Notify project owner with email when the project created successfully."""
 from pkg_resources import resource_filename
-
+from trac.config import Option, ListOption
 from trac.core import Component, implements
 from trac.notification import Notify, NotifyEmail
-from trac.config import Option, ListOption
 from trac.web.chrome import ITemplateProvider
 
 from tracportal.i18n import _
@@ -26,6 +25,8 @@ class ProjectCreationNotificationSystem(Component):
     ccrcpts = ListOption('tracportal', 'notify_email_cc',
                          doc=_('Email address(es) to always send notifications to, '
                                'addresses can be seen by all recipients (Cc:).'))
+    subject = Option('tracportal', 'notify_email_subject', default=_("Ready to start Trac project!"),
+                     doc=_('Subject in notification emails.'))
 
     # ITemplateProvider methods
 
@@ -63,7 +64,7 @@ class ProjectCreationNotifyEmail(NotifyEmail):
         self.project_info = project_info
         self.owner_info = owner_info
         self.support = support
-        self.subject = _("Ready to start Trac project!")
+        self.subject = self.subject
 
     def get_recipients(self, resid):
         return (self.torcpts, self.ccrcpts,)

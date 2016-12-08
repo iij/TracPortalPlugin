@@ -8,8 +8,8 @@
 """Notify project creation with ticket when the project created successfully."""
 
 from datetime import datetime
-from trac.config import Option
 
+from trac.config import Option
 from trac.core import Component, implements
 from trac.env import open_environment
 from trac.ticket import Ticket
@@ -20,7 +20,7 @@ from tracportal.project.api import IProjectCreationInterceptor
 
 class TicketNotificationSystem(Component):
     implements(IProjectCreationInterceptor)
-    #options
+    # options
     notify_env = Option('tracportal', 'notify_ticket_env',
                         doc='Trac environment for notify creation project by new ticket.')
 

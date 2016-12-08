@@ -3,7 +3,7 @@
 #
 # Python setup script for TracPortalPlugin
 #
-# (C) 2013 Internet Initiative Japan Inc.
+# (C) 2013-2016 Internet Initiative Japan Inc.
 # All rights reserved.
 #
 # Created on 2013/06/27
@@ -14,16 +14,18 @@ from setuptools import setup, find_packages
 extra = {}
 try:
     import babel
+
     extractors = [
-        ('**.py', 'python', None),
+        ('**.py', 'trac.dist:extract_python', None),
         ('**/templates/**.html', 'genshi', None),
         ('**/templates/**.txt', 'genshi',
-         {'template_class': 'genshi.template:TextTemplate'}),
+         {'template_class': 'genshi.template:NewTextTemplate'}),
     ]
     extra['message_extractors'] = {
         'tracportal': extractors,
         'tracportalopt': extractors,
     }
+
     from trac.dist import get_l10n_js_cmdclass
     extra['cmdclass'] = get_l10n_js_cmdclass()
 
@@ -31,24 +33,33 @@ except ImportError:
     pass
 
 setup(
-    name = 'TracPortalPlugin',
-    version = '0.1.0',
-    author = 'yosinobu',
-    author_email = 'yosinobu@iij.ad.jp',
-    description = 'Provide trac portal pages for multiple projects.',
+    name='TracPortalPlugin',
+    version='0.2',
+    author='yosinobu',
+    author_email='yosinobu@iij.ad.jp',
+    description='Provide trac portal pages for multiple projects.',
     url='https://github.com/iij/TracPortalPlugin',
-    license = 'MIT',
-    packages = find_packages(exclude=['*.tests']),
-    package_data = {
-        '': ['templates/*'],
+    license='MIT',
+    packages=find_packages(exclude=['*.tests']),
+    package_data={
+        '': ['templates/*', 'screenshot/*.png'],
         'tracportal': ['htdocs/*.*', 'htdocs/README', 'htdocs/js/*.*',
-                       'htdocs/js/messages/*.*', 'htdocs/css/*.*',
-                       'htdocs/guide/*', 'locale/*/LC_MESSAGES/*.mo',
+                       'htdocs/js/messages/*.*', 'htdocs/css/*.*', 'htdocs/guide/*',
+                       'locale/*.pot', 'locale/*/LC_MESSAGES/*.po', 'locale/*/LC_MESSAGES/*.mo',
                        'htdocs/css/smoothness/*.css', 'htdocs/css/smoothness/images/*.*'],
         'tracportalopt': []
     },
-    zip_safe = True,
-    entry_points = """
+    zip_safe=True,
+    setup_requires=[
+        'Trac>=0.12',
+    ],
+    install_requires=[
+        'Trac>=0.12',
+    ],
+    extras_require={
+        'xmlrpc': ['TracXMLRPC>=1.1.5'],
+    },
+    entry_points="""
         [trac.plugins]
         tracportal.api = tracportal.api
         tracportal.core = tracportal.core
@@ -62,6 +73,5 @@ setup(
         tracportal.i18n = tracportal.i18n
         tracportalopt.project.notification = tracportalopt.project.notification
     """,
-    requires = ['Trac', 'TracXMLRPC'],
     **extra
 )

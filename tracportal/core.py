@@ -8,6 +8,7 @@
 # Created on 2013/06/04
 # @author: yosinobu@iij.ad.jp
 import os
+
 from trac.config import Option
 from trac.core import Component, TracError
 
@@ -15,7 +16,6 @@ from tracportal.i18n import _
 
 
 class TracPortalCore(Component):
-
     # class variables
     _env_key = 'TRAC_ENV_PARENT_DIR'
     parent_dir = Option('tracportal', 'trac_env_parent_dir',

@@ -8,21 +8,20 @@
 # Created on 2011/01/27
 # @author: yosinobu@iij.ad.jp
 
-from  pkg_resources import resource_filename
 from datetime import timedelta
 
 from genshi.builder import tag
-
-from trac.core import *
+from  pkg_resources import resource_filename
 from trac.config import Option, IntOption
+from trac.core import *
 from trac.perm import IPermissionRequestor
+from trac.util.datefmt import to_datetime, utc
 from trac.web.api import IRequestHandler
 from trac.web.chrome import ITemplateProvider, INavigationContributor, \
-     add_stylesheet, add_script
-from trac.util.datefmt import to_datetime, utc
+    add_stylesheet, add_script
 
-from tracportal.i18n import _
 from tracportal.api import IProjectListProvider
+from tracportal.i18n import _
 from tracportal.project_list.api import IProjectActivityDataProvider, IProjectInfoProvider
 
 
@@ -92,7 +91,7 @@ class ProjectListModule(Component):
                     project['info'] = info
                     break
             # project activity data
-            end  = to_datetime(None, utc)
+            end = to_datetime(None, utc)
             beginning = end - timedelta(self.period)
             for provider in self.project_activity_providers:
                 activity = provider.get_activity_data(env_name, beginning, end)
@@ -115,8 +114,8 @@ class ProjectListModule(Component):
             p['activity'].score = int(float(p['activity'].get_total()) * rate)
             p['activity'].score_month = int(float(p['activity'].get_total_month()) * rate_month)
         projects.sort(lambda x, y: x['activity'].score_month == y['activity'].score_month
-                      and (y['activity'].score - x['activity'].score)
-                      or (y['activity'].score_month - x['activity'].score_month))
+                                   and (y['activity'].score - x['activity'].score)
+                                   or (y['activity'].score_month - x['activity'].score_month))
         data = {
             'type': 'available',
             'projects': projects,
@@ -128,7 +127,6 @@ class ProjectListModule(Component):
 
 
 class PublicProjectListModule(Component):
-
     implements(INavigationContributor, IPermissionRequestor, ITemplateProvider, IRequestHandler)
 
     project_list_providers = ExtensionPoint(IProjectListProvider)
@@ -193,7 +191,7 @@ class PublicProjectListModule(Component):
                     project['info'] = info
                     break
             # project activity data
-            end  = to_datetime(None, utc)
+            end = to_datetime(None, utc)
             beginning = end - timedelta(self.period)
             for provider in self.project_activity_providers:
                 activity = provider.get_activity_data(env_name, beginning, end)
@@ -216,8 +214,8 @@ class PublicProjectListModule(Component):
             p['activity'].score = int(float(p['activity'].get_total()) * rate)
             p['activity'].score_month = int(float(p['activity'].get_total_month()) * rate_month)
         projects.sort(lambda x, y: x['activity'].score_month == y['activity'].score_month
-                      and (y['activity'].score - x['activity'].score)
-                      or (y['activity'].score_month - x['activity'].score_month))
+                                   and (y['activity'].score - x['activity'].score)
+                                   or (y['activity'].score_month - x['activity'].score_month))
         data = {
             'type': 'public',
             'projects': projects,

@@ -13,7 +13,6 @@ from trac.env import IEnvironmentSetupParticipant
 
 
 class SetupTracPortal(Component):
-
     implements(IEnvironmentSetupParticipant)
 
     db_tables = ('cache_projects', 'cache_projects_stats')
