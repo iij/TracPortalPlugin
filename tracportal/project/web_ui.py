@@ -169,7 +169,7 @@ class NewProject(Component):
         project_id = project.get('id')
         if not project_id:
             raise ValidationError(_(self.message_required, **kwargs))
-        if not re.match('^[\w\d\-]*$', project_id):
+        if not re.match('^[a-z_\d\-]*$', project_id):
             raise ValidationError(_(self.message_invalid_character, **kwargs))
         if not project_id[0].isalpha():
             raise ValidationError(_(self.message_startswith_alpha, **kwargs))

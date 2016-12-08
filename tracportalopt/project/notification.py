@@ -26,6 +26,8 @@ class ProjectCreationNotificationSystem(Component):
     ccrcpts = ListOption('tracportal', 'notify_email_cc',
                          doc=_('Email address(es) to always send notifications to, '
                                'addresses can be seen by all recipients (Cc:).'))
+    subject = Option('tracportal', 'notify_email_subject', default=_("Ready to start Trac project!"),
+                     doc=_('Subject in notification emails.'))
 
     # ITemplateProvider methods
 
@@ -63,7 +65,7 @@ class ProjectCreationNotifyEmail(NotifyEmail):
         self.project_info = project_info
         self.owner_info = owner_info
         self.support = support
-        self.subject = _("Ready to start Trac project!")
+        self.subject = self.subject
 
     def get_recipients(self, resid):
         return (self.torcpts, self.ccrcpts,)

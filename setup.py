@@ -32,7 +32,7 @@ except ImportError:
 
 setup(
     name = 'TracPortalPlugin',
-    version = '0.1.0',
+    version = '0.1.1',
     author = 'yosinobu',
     author_email = 'yosinobu@iij.ad.jp',
     description = 'Provide trac portal pages for multiple projects.',
@@ -48,6 +48,13 @@ setup(
         'tracportalopt': []
     },
     zip_safe = True,
+    install_requires = [
+        'setuptools>=0.6',
+        'Trac>=0.12',
+    ],
+    extras_require = {
+        'xmlrpc': ['TracXMLRPC>=1.1.5'],
+    },
     entry_points = """
         [trac.plugins]
         tracportal.api = tracportal.api
@@ -62,6 +69,5 @@ setup(
         tracportal.i18n = tracportal.i18n
         tracportalopt.project.notification = tracportalopt.project.notification
     """,
-    requires = ['Trac', 'TracXMLRPC'],
     **extra
 )
